@@ -1,0 +1,105 @@
+.student-profile {
+  display: flex;
+  flex-direction: column;
+  max-width: 1280px;
+  margin: 0 auto;
+  background-color: #202020;
+}
+
+.student-profile__header {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    color: #fff;
+    text-align: left;
+    padding: 110px 0 0 70px;
+    margin: 0;
+}
+
+.student-profile__header::after {
+  width: 1140px;
+  content: '';
+  display: block;
+  box-sizing: border-box;
+  border-bottom: 1px solid #DADADA;
+  padding-top: 23px;
+  margin-bottom: 70px;
+}
+
+.student-profile__info-container {
+  display: flex;
+  justify-content: space-between;
+  width: 1140px;
+  margin: 0 auto;
+  padding: 0 0 100px 0;
+}
+
+.student-profile__info {
+  max-width: 600px;
+}
+
+.student-profile__info_name {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 58px;
+  letter-spacing: -0.04em;
+  color: #FFF;
+  margin: 0;
+  padding: 0 0 18px 0;
+}
+
+.student-profile__info_occupation {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 20px;
+  color: #FFFFFF;
+  margin: 0;
+  padding: 0 0 26px 0;
+}
+
+.student-profile__info_description {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #FFFFFF;
+  margin: 0;
+  padding: 0 0 99px 0;
+}
+
+.student-profile__info_links {
+  display: flex;
+}
+
+.student-profile__info_link {
+  text-decoration: none;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #FFFFFF;
+  margin: 0;
+  padding: 0;
+}
+
+.student-profile__info_link:first-child {
+  margin-right: 20px;
+}
+
+.student-profile__info_link:hover {
+  opacity: .6;
+  transition: opacity .3s;
+}
+
+.student-profile__photo {
+  max-width: 270px;
+  object-fit: cover;
+}

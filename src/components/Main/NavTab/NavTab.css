@@ -1,0 +1,35 @@
+.navtab {
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
+  background-color: #272727;
+}
+
+.navtab__container {
+  display: flex;
+  align-self: center;
+  padding: 30px 0 30px;
+  margin: 0 auto;
+}
+
+.navtab__button {
+  width: 96px;
+  height: 36px;
+  padding: 0;
+  margin: 0 10px 0 0;
+  border: none;
+  background-color: #303030;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #fff;
+}
+
+.navtab__button:hover {
+  opacity: .6;
+  transition: opacity .3s;
+}

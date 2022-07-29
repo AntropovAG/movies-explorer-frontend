@@ -1,0 +1,126 @@
+.project-info {
+  display: flex;
+  flex-direction: column;
+  max-width: 1280px;
+  margin: 0 auto;
+  background-color: #202020;
+}
+
+.project-info__header {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    color: #fff;
+    text-align: left;
+    padding: 110px 0 0 70px;
+    margin: 0;
+}
+
+.project-info__header::after {
+  width: 1140px;
+  content: '';
+  display: block;
+  box-sizing: border-box;
+  border-bottom: 1px solid #DADADA;
+  padding-top: 23px;
+  margin-bottom: 70px;
+}
+
+.project-info__list {
+  display: flex;
+  max-width: 1140px;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0 0 110px 0;
+}
+
+.project-info__list_title {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.04em;
+  color: #fff;
+}
+
+.project-info__list_description {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #fff;
+}
+
+.project-info__timetable {
+  display: flex;
+  max-width: 1140px;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0 0 105px 0;
+}
+
+.project-info__timetable_backend {
+  width: 228px;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-info__timetable_backend_title {
+  padding: 9px 0;
+  margin: 0;
+  background-color: #3DDC84;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #000;
+}
+
+.project-info__timetable_backend_description {
+  padding: 14px 0;
+  margin: 0;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #8B8B8B;
+}
+
+.project-info__timetable_frontend {
+  width: 912px;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-info__timetable_frontend_title {
+  padding: 9px 0;
+  margin: 0;
+  background-color: #303030;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #FFF;
+}
+
+.project-info__timetable_frontend_description {
+  padding: 14px 0;
+  margin: 0;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #8B8B8B;
+}
