@@ -14,7 +14,8 @@
     line-height: 27px;
     color: #fff;
     text-align: left;
-    padding: 110px 0 0 70px;
+    letter-spacing: -0.04em;
+    padding: 100px 0 0 70px;
     margin: 0;
 }
 
@@ -25,7 +26,7 @@
   box-sizing: border-box;
   border-bottom: 1px solid #DADADA;
   padding-top: 23px;
-  margin-bottom: 70px;
+  margin-bottom: 90px;
 }
 
 .techs__title {
@@ -42,6 +43,7 @@
 }
 
 .techs__subtitle {
+  max-width: 460px;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
@@ -51,7 +53,7 @@
   letter-spacing: -0.04em;
   color: #fff;
   padding: 0 0 100px 0;
-  margin: 0;
+  margin: 0 auto;
 }
 
 .techs__links {
@@ -78,7 +80,7 @@
 }
 
 .techs__link:hover {
-  opacity: .6;
+  opacity: .7;
   transition: opacity .3s;
 }
 

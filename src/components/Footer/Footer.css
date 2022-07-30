@@ -1,6 +1,7 @@
 .footer {
   width: 1140px;
   margin: 0 auto;
+  padding-top: 79px
 }
 
 .footer__text {
@@ -61,6 +62,6 @@
 }
 
 .footer__link:hover {
-  opacity: .6;
+  opacity: .7;
   transition: opacity .3s;
 }

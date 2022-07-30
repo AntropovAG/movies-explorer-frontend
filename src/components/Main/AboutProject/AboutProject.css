@@ -14,6 +14,7 @@
     line-height: 27px;
     color: #fff;
     text-align: left;
+    letter-spacing: -0.04em;
     padding: 110px 0 0 70px;
     margin: 0;
 }
@@ -30,10 +31,15 @@
 
 .project-info__list {
   display: flex;
-  max-width: 1140px;
+  justify-content: space-between;
+  width: 1140px;
   list-style: none;
   margin: 0 auto;
   padding: 0 0 110px 0;
+}
+
+.project-info__list_item {
+  max-width: 550px;
 }
 
 .project-info__list_title {
@@ -44,6 +50,8 @@
   line-height: 24px;
   letter-spacing: -0.04em;
   color: #fff;
+  padding: 0 0 26px 0;
+  margin: 0;
 }
 
 .project-info__list_description {
@@ -53,6 +61,8 @@
   font-size: 14px;
   line-height: 20px;
   color: #fff;
+  padding: 0;
+  margin: 0;
 }
 
 .project-info__timetable {
@@ -60,7 +70,7 @@
   max-width: 1140px;
   list-style: none;
   margin: 0 auto;
-  padding: 0 0 105px 0;
+  padding: 0 0 110px 0;
 }
 
 .project-info__timetable_backend {
@@ -83,7 +93,7 @@
 }
 
 .project-info__timetable_backend_description {
-  padding: 14px 0;
+  padding: 14px 0 0 0;
   margin: 0;
   font-family: 'Inter';
   font-style: normal;
@@ -114,7 +124,7 @@
 }
 
 .project-info__timetable_frontend_description {
-  padding: 14px 0;
+  padding: 14px 0 0 0;
   margin: 0;
   font-family: 'Inter';
   font-style: normal;

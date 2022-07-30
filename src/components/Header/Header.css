@@ -5,6 +5,7 @@
   min-height: 74px;
   background-color: #202020;
   margin: 0 auto;
+  padding-bottom: 20px;
 }
 
 .header__logo {
@@ -36,7 +37,7 @@
 }
 
 .header__link:hover {
-  opacity: .6;
+  opacity: .7;
   transition: opacity .3s;
 }
 
