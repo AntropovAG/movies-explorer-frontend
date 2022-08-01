@@ -1,0 +1,39 @@
+.card-list {
+  display: flex;
+  flex-direction: column;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.card-list__container {
+  padding: 70px 0 0;
+  margin: 0;
+  display: grid;
+  grid-auto-rows: 1fr;
+  grid-template-columns: repeat(3,1fr);
+  gap: 30px 24px;
+  justify-content: center;
+  list-style: none;
+}
+
+.card-list__button {
+  width: 320px;
+  height: 36px;
+  border: 1px solid #424242;
+  margin: 80px auto 80px;
+  background-color: inherit;
+  box-sizing: border-box;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.card-list__button:hover {
+  opacity: .6;
+  transition: .3s;
+}
