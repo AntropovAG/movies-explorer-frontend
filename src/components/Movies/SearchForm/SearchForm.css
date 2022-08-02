@@ -44,6 +44,10 @@
   box-sizing: border-box;
 }
 
+.search-form__input:focus {
+  outline: none;
+}
+
 .search-form__button {
   width: 34px;
   height: 34px;

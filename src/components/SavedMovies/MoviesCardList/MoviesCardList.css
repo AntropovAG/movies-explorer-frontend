@@ -3,6 +3,9 @@
   flex-direction: column;
   max-width: 1140px;
   margin: 0 auto;
+}
+
+.card-list_no-button {
   padding-bottom: 170px;
 }
 

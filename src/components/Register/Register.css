@@ -1,0 +1,117 @@
+.register-form {
+  width: 396px;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: auto;
+}
+
+.register-form__icon {
+  width: 38px;
+  height: 38px;
+  margin-top: 70px;
+  background-image: url('../../images/header-logo.png');
+}
+
+.register-form__label {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  color: #FFFFFF;
+  padding: 40px 0 14px;
+  margin: 0;
+}
+
+.register-form__input-name {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: #8B8B8B;
+  padding: 24px 0 5px 0;
+  margin: 0;
+}
+
+.register-form__input-name:nth-of-type(2), .register-form__input-name:nth-of-type(3) {
+  padding-top: 5px;
+}
+
+.register-form__input {
+  height: 30px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #FFFFFF;
+  background-color: inherit;
+  border: none;
+  border-bottom: 1px solid #424242;
+  box-sizing: border-box;
+  padding: 0 0 10px 0;
+}
+
+.register-form__input:focus {
+  outline: none;
+  border-bottom: 1px solid #4285F4;;
+}
+
+.register-form__input-error {
+  height: 12px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: #EE3465;
+  margin: 0;
+  padding: 6px 0 0;
+}
+
+.register-form__authorize-button {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #FFFFFF;
+  background-color: #4285F4;
+  border: none;
+  border-radius: 3px;
+  margin-top: 132px;
+  padding: 13px 0 15px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.register-form__authorize-button:hover {
+  opacity: .6;
+  transition: .3s;
+}
+
+.register-form__subscription {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #8B8B8B;
+  margin: 0;
+  padding: 16px 0 0;
+}
+
+.register-form__link {
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #4285F4;
+  margin: 0;
+  padding: 0 0 0 3px;
+}
+
+.register-form__link:hover {
+  opacity: .6;
+  transition: .3s;
+}
