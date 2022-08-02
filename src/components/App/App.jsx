@@ -9,6 +9,7 @@ import Movies from "../Movies/Movies";
 import SavedMovies from "../SavedMovies/SavedMovies";
 import Login from "../Login/Login";
 import Register from "../Register/Register";
+import Profile from "../Profile/Profile";
 // import ProtectedRoute from "../ProtectedRiute/ProtectedRoute";
 
 function App() {
@@ -45,7 +46,7 @@ function App() {
         </Route>
 
         <Route exact path="/profile">
-          <Movies/>
+          <Profile/>
         </Route>
 
       </Switch>
