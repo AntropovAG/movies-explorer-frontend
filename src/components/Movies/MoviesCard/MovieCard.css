@@ -59,7 +59,7 @@
   transition: .3s
 }
 
-.movie-card__like-button:active {
+.movie-card__like-button_active {
   width: 30px;
   height: 30px;
   background-image: url('../../../images/like-button-active.png');

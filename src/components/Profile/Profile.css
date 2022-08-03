@@ -75,7 +75,7 @@
   padding: 6px 0 0;
 }
 
-.profile-form__authorize-button {
+.profile-form__edit-button {
   width: min-content;
   font-style: normal;
   font-weight: 400;
@@ -91,7 +91,7 @@
   box-sizing: border-box;
 }
 
-.profile-form__authorize-button:hover {
+.profile-form__edit-button:hover {
   opacity: .6;
   transition: .3s;
 }
@@ -113,6 +113,51 @@
 }
 
 .profile-form__signout-button:hover {
+  opacity: .6;
+  transition: .3s;
+}
+
+.profile-form__form-error {
+  height: 12px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: #EE3465;
+  margin: 189px 0 0;
+  padding: 0;
+  text-align: center;
+}
+
+.profile-form__save-button {
+  width: 100%;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #FFFFFF;
+  background-color: #4285F4;
+  border: none;
+  border-radius: 3px;
+  margin: 20px auto 0;
+  padding: 13px 0 15px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.profile-form__save-button_inactive {
+  color: #C2C2C2;
+  background-color: #F8F8F8;
+  border: none;
+  border-radius: 3px;
+  margin: 202px auto 0;
+  padding: 13px 0 15px;
+  cursor: auto;
+  box-sizing: border-box;
+}
+
+.profile-form__save-button:hover {
   opacity: .6;
   transition: .3s;
 }

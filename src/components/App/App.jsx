@@ -1,4 +1,5 @@
 import { Route, Switch, useLocation } from "react-router-dom"
+import { useState } from "react";
 import './App.css';
 import '../Header/Header'
 import '../Main/Main'
@@ -10,10 +11,28 @@ import SavedMovies from "../SavedMovies/SavedMovies";
 import Login from "../Login/Login";
 import Register from "../Register/Register";
 import Profile from "../Profile/Profile";
-// import ProtectedRoute from "../ProtectedRiute/ProtectedRoute";
+import NotFound from "../NotFound/NotFound";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+import Navigation from "../Navigation/Navigation";
+import ErrorPopUp from "../ErrorPopUp/ErrorPopUp";
+// import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
 function App() {
   const location = useLocation();
+  const [currentUser, setCurrentUser] = useState({name: 'Виктор', email: 'pochta@yandex.ru'});
+  const [isErrorPopUpOpen, setIsErrorPopUpOpen] = useState(false);
+
+  function handleUserUpdate (name, email) {
+    setCurrentUser(name, email);
+  }
+
+  function handleErrorPopUpOpen () {
+    setIsErrorPopUpOpen(true);
+  }
+
+  function handleErrorPopUpClose () {
+    setIsErrorPopUpOpen(false);
+  }
 
   return (
     <div className='app'>
@@ -23,38 +42,50 @@ function App() {
       location.pathname === "/profile") && <Header/>}
 
       <Switch>
-        <Route exact path="/">
-          <Main/>
+        <CurrentUserContext.Provider value={currentUser}>
+          <ErrorPopUp isOpen={isErrorPopUpOpen}/>
+
+          <Route exact path="/">
+            <Main/>
+          </Route>
+
+          <Route exact path="/movies">
+            <Movies/>
+          </Route>
+        {/* <ProtectedRoute exact path="/movies">
+
+        </ProtectedRoute> */}
+          <Route exact path="/saved-movies">
+            <SavedMovies/>
+          </Route>
+
+          <Route exact path="/signup">
+            <Register/>
+          </Route>
+
+          <Route exact path="/signin">
+            <Login/>
+          </Route>
+
+          <Route exact path="/profile">
+            <Profile onUserUpdate={handleUserUpdate}/>
+          </Route>
+
+          {(location.pathname === "/" ||
+            location.pathname === "/movies" ||
+            location.pathname === "/saved-movies") &&
+            <Footer/>
+          }
+
+        </CurrentUserContext.Provider>
+
+        <Route path="*">
+          <NotFound/>
         </Route>
 
-        <Route exact path="/movies">
-          <Movies/>
-        </Route>
-      {/* <ProtectedRoute exact path="/movies">
-
-      </ProtectedRoute> */}
-        <Route exact path="/saved-movies">
-          <SavedMovies/>
-        </Route>
-
-        <Route exact path="/signup">
-          <Register/>
-        </Route>
-
-        <Route exact path="/signin">
-          <Login/>
-        </Route>
-
-        <Route exact path="/profile">
-          <Profile/>
-        </Route>
 
       </Switch>
 
-      {(location.pathname === "/" ||
-      location.pathname === "/movies" ||
-      location.pathname === "/saved-movies") &&
-      <Footer/>}
 
     </div>
   );
