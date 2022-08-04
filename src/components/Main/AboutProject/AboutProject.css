@@ -167,7 +167,6 @@
 
 }
 
-
 @media screen and (max-width: 1070px) {
   .project-info {
     max-width: 768px;
@@ -204,5 +203,124 @@
 
   .project-info__timetable_frontend {
     width: 79%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .project-info {
+    max-width: 520px;
+  }
+
+  .project-info__header::after {
+    width: 500px;
+    margin-bottom: 60px;
+  }
+
+  .project-info__list {
+    flex-direction: column;
+    width: 500px;
+    align-items: center;
+  }
+
+  .project-info__list_item {
+    max-width: 500px;
+  }
+
+  .project-info__list_item:first-of-type {
+    padding-bottom: 56px;
+  }
+
+  .project-info__timetable {
+    min-width: 500px;
+  }
+
+  .project-info__header {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .project-info__list_title {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .project-info__list_description {
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .project-info__timetable_backend_title {
+    font-size: 11px;
+    line-height: 13px;
+  }
+
+  .project-info__timetable_backend_description {
+    font-size: 11px;
+    line-height: 13px;
+  }
+
+  .project-info__timetable_frontend_title {
+    font-size: 11px;
+    line-height: 13px;
+  }
+
+  .project-info__timetable_frontend_description {
+    font-size: 11px;
+    line-height: 13px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .project-info {
+    max-width: 320px;
+  }
+
+  .project-info__header {
+    padding-top: 71px;
+}
+  .project-info__header::after {
+    width: 284px;
+    padding-top: 27px;
+  }
+
+  .project-info__list {
+    width: 284px;
+    padding-bottom: 60px;
+  }
+
+  .project-info__list_item {
+    max-width: 284px;
+  }
+
+  .project-info__list_title {
+    padding-bottom: 16px;
+  }
+
+  .project-info__timetable {
+    min-width: 284px;
+  }
+
+  .project-info__timetable_backend {
+    width: 35%;
+  }
+
+  .project-info__timetable_frontend {
+    width: 65%;
+  }
+
+  .project-info__timetable_backend_title {
+    padding: 11px 0;
+  }
+
+  .project-info__timetable_backend_description {
+    padding-top: 10px;
+  }
+
+  .project-info__timetable_frontend_title {
+    padding: 11px 0
+  }
+
+  .project-info__timetable_frontend_description {
+    padding-top: 10px;
   }
 }

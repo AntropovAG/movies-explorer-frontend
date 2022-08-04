@@ -13,7 +13,7 @@ function Header() {
 
           <nav className="header__navigation">
             <Link className="header__link " to="/signup">Регистрация</Link>
-            <Link className="header__link header__link_color_black" to="/signin"><button className="header__button" type='button'>Войти</button></Link>
+            <Link className="header__link" to="/signin"><button className="header__button" type='button'>Войти</button></Link>
           </nav>
 
       }

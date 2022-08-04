@@ -3,6 +3,7 @@
   max-width: 1200px;
   margin: 0 auto;
   background-color: #272727;
+  border-radius: 10px 10px 0 0;
 }
 
 .promo__heading {
@@ -39,5 +40,28 @@
 
   .promo__heading {
     margin: 350px auto 284px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .promo {
+    max-width: 520px;
+  }
+  .promo__heading {
+    font-size: 29px;
+    line-height: 37px;
+    margin: 220px 14px 212px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .promo {
+    max-width: 292px;
+  }
+
+  .promo__heading {
+    max-width: 292px;
+    margin-left: 0;
+    margin-right: 0;
   }
 }

@@ -3,6 +3,7 @@
   width: 1200px;
   margin: 0 auto;
   background-color: #272727;
+  border-radius: 0 0 10px 10px;
 }
 
 .navtab__container {
@@ -34,7 +35,6 @@
   transition: opacity .3s;
 }
 
-
 @media screen and (max-width: 1240px) {
   .navtab {
     max-width: 1000px;
@@ -45,5 +45,36 @@
 @media screen and (max-width: 1070px) {
   .navtab {
     max-width: 728px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .navtab {
+    max-width: 520px;
+  }
+
+  .navtab__button {
+    width: 82px;
+    height: 26px;
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .navtab {
+    max-width: 292px;
+  }
+
+  .navtab__container {
+    padding: 0 0 17px;
+  }
+
+  .navtab__button {
+    border-radius: 6px;
+    margin: 0 6px 0 0;
+  }
+
+  .navtab__button:last-of-type {
+    margin-right: 0;
   }
 }
