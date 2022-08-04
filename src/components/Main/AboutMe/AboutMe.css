@@ -219,7 +219,7 @@
   }
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 550px) {
   .student-profile {
     max-width: 320px;
   }
