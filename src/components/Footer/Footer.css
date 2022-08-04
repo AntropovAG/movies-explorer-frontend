@@ -65,3 +65,15 @@
   opacity: .7;
   transition: opacity .3s;
 }
+
+@media screen and (max-width: 1240px) {
+  .footer {
+    width: 980px;
+  }
+}
+
+@media screen and (max-width: 1070px) {
+  .footer {
+    width: 708px;
+  }
+}

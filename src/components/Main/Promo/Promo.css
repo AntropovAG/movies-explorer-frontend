@@ -19,3 +19,25 @@
   letter-spacing: -0.04em;
   color: #fff;
 }
+
+@media screen and (max-width: 1240px) {
+  .promo {
+    max-width: 1000px;
+  }
+
+  .promo__heading {
+    max-width: 680px;
+    font-size: 40px;
+    line-height: 52px;
+  }
+}
+
+@media screen and (max-width: 1070px) {
+  .promo {
+    max-width: 728px;
+  }
+
+  .promo__heading {
+    margin: 350px auto 284px;
+  }
+}

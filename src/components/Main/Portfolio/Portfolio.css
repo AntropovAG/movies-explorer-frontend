@@ -19,6 +19,7 @@
 
 .portfolio__links {
   display: flex;
+  width: 1140px;
   flex-direction: column;
   margin: 0 auto;
   padding: 0;
@@ -30,7 +31,6 @@
 
 .portfolio__link {
   display: flex;
-  width: 1140px;
   justify-content: space-between;
   align-items: center;
   text-decoration: none;
@@ -71,4 +71,37 @@
   width: 18px;
   height: 17px;
   padding-right: 7px;
+}
+
+
+@media screen and (max-width: 1240px) {
+  .portfolio {
+    width: 1000px;
+    margin: 0 auto;
+    padding-bottom: 90px;
+  }
+
+  .portfolio__links {
+    width: 1000px;
+  }
+
+  .portfolio__link_name {
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 1070px) {
+  .portfolio {
+    width: 668px;
+    margin: 0 auto;
+    padding-bottom: 90px;
+  }
+
+  .portfolio__links {
+    width: 668px;
+  }
+
+  .portfolio__link_image {
+    padding-right: 5px;
+  }
 }

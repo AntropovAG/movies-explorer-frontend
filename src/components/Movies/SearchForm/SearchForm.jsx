@@ -3,7 +3,7 @@ import './SearchForm.css'
 import icon from '../../../images/search-form-icon.png'
 import FilterCheckbox from '../FilterCheckbox/FilterCheckbox'
 
-function SearchForm() {
+function SearchForm({ onSearch }) {
   const [searchValue, setSearchValue] = useState();
 
   function handleSearchChange (evt) {
@@ -12,6 +12,7 @@ function SearchForm() {
 
   function handleSearchMovie (evt) {
     evt.preventDefault();
+    onSearch();
     setSearchValue('');
   }
 
@@ -19,7 +20,7 @@ function SearchForm() {
     <section className="search-form">
       <form className="search-form__container">
         <img className="search-form__icon" src={icon} alt="Иконка поиска фильма"/>
-        <input className="search-form__input" placeholder='Фильм' value={searchValue} onChange={handleSearchChange} />
+        <input className="search-form__input" placeholder='Фильм' value={searchValue || ""} onChange={handleSearchChange} />
         <button className="search-form__button" type='submit' onClick={handleSearchMovie}></button>
         <FilterCheckbox/>
       </form>

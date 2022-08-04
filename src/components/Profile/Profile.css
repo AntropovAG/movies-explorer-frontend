@@ -146,18 +146,25 @@
   box-sizing: border-box;
 }
 
-.profile-form__save-button_inactive {
-  color: #C2C2C2;
-  background-color: #F8F8F8;
-  border: none;
-  border-radius: 3px;
-  margin: 202px auto 0;
-  padding: 13px 0 15px;
-  cursor: auto;
-  box-sizing: border-box;
-}
-
 .profile-form__save-button:hover {
   opacity: .6;
   transition: .3s;
 }
+
+.profile-form__save-button:disabled {
+  color: #C2C2C2;
+  background-color: #F8F8F8;
+  border: none;
+  border-radius: 3px;
+  margin: 20px auto 0;
+  padding: 13px 0 15px;
+  cursor: default;
+  box-sizing: border-box;
+}
+
+.profile-form__save-button:disabled:hover {
+  opacity: 1;
+  transition: none;
+}
+
+

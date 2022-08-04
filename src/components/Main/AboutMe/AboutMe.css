@@ -15,8 +15,8 @@
     color: #fff;
     text-align: left;
     letter-spacing: -0.04em;
-    padding: 110px 0 0 70px;
-    margin: 0;
+    padding: 110px 0 0;
+    margin: 0 auto;
 }
 
 .student-profile__header::after {
@@ -105,4 +105,73 @@
   max-height: 327px;
   object-fit: cover;
   border-radius: 10px;
+}
+
+@media screen and (max-width: 1240px) {
+  .student-profile {
+    max-width: 1120px;
+  }
+
+  .student-profile__header::after {
+    width: 1000px;
+  }
+
+  .student-profile__info-container {
+    width: 1000px;
+    padding-bottom: 90px;
+  }
+
+  .student-profile__info_name {
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  .student-profile__info_occupation {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .student-profile__info_description {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+@media screen and (max-width: 1070px) {
+  .student-profile {
+    max-width: 768px;
+  }
+
+  .student-profile__header {
+    padding-top: 91px;
+}
+
+  .student-profile__header::after {
+    width: 668px;
+  }
+
+  .student-profile__info-container {
+    width: 668px;
+  }
+
+  .student-profile__info {
+    max-width: 364px;
+  }
+
+  .student-profile__info_name {
+    padding-bottom: 15px;
+  }
+
+  .student-profile__info_occupation {
+    padding-bottom: 20px;
+  }
+
+  .student-profile__info_description {
+    padding-bottom: 87px;
+  }
+
+  .student-profile__photo {
+    min-width: 255px;
+    max-height: 307px;
+  }
 }

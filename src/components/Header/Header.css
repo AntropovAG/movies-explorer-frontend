@@ -1,7 +1,8 @@
 .header {
   display: flex;
   justify-content: space-between;
-  max-width: 1280px;
+  max-width: 1140px;
+  min-width: 320px;
   min-height: 74px;
   background-color: #202020;
   margin: 0 auto;
@@ -12,7 +13,7 @@
   text-decoration: none;
   min-width: 38px;
   height: 38px;
-  margin: 18px 0 18px 70px;
+  margin: 18px 0;
   background-image: url('../../images/header-logo.png');
   background-position: center;
   background-repeat: no-repeat;
@@ -26,7 +27,7 @@
 .header__navigation {
   display: flex;
   align-self: center;
-  padding: 21px 70px 21px 0;
+  padding: 21px 0;
 }
 
 .header__navigation_movie-links {
@@ -60,7 +61,7 @@ padding-left: 44px;
   font-size: 14px;
 }
 
-.header__link_black {
+.header__link_color_black {
   color: #000000;
 }
 
@@ -85,4 +86,16 @@ padding-left: 44px;
   background-color: #313131;
   border-radius: 20px;
   color: #FFF;
+}
+
+@media screen and (max-width: 1240px) {
+  .header {
+    max-width: 980px;
+  }
+}
+
+@media screen and (max-width: 1070px) {
+  .header {
+    max-width: 708px;
+  }
 }

@@ -13,7 +13,6 @@ import Register from "../Register/Register";
 import Profile from "../Profile/Profile";
 import NotFound from "../NotFound/NotFound";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
-import Navigation from "../Navigation/Navigation";
 import ErrorPopUp from "../ErrorPopUp/ErrorPopUp";
 // import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
@@ -21,18 +20,24 @@ function App() {
   const location = useLocation();
   const [currentUser, setCurrentUser] = useState({name: 'Виктор', email: 'pochta@yandex.ru'});
   const [isErrorPopUpOpen, setIsErrorPopUpOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   function handleUserUpdate (name, email) {
     setCurrentUser(name, email);
   }
 
-  function handleErrorPopUpOpen () {
-    setIsErrorPopUpOpen(true);
+  function handleLoading () {
+    setIsLoading(true);
+    setTimeout(() => setIsLoading(false), 2000)
   }
 
-  function handleErrorPopUpClose () {
-    setIsErrorPopUpOpen(false);
-  }
+  // function handleErrorPopUpOpen () {
+  //   setIsErrorPopUpOpen(true);
+  // }
+
+  // function handleErrorPopUpClose () {
+  //   setIsErrorPopUpOpen(false);
+  // }
 
   return (
     <div className='app'>
@@ -43,14 +48,13 @@ function App() {
 
       <Switch>
         <CurrentUserContext.Provider value={currentUser}>
-          <ErrorPopUp isOpen={isErrorPopUpOpen}/>
 
           <Route exact path="/">
             <Main/>
           </Route>
 
           <Route exact path="/movies">
-            <Movies/>
+            <Movies isLoading={isLoading} onSearch={handleLoading}/>
           </Route>
         {/* <ProtectedRoute exact path="/movies">
 
@@ -79,13 +83,11 @@ function App() {
 
         </CurrentUserContext.Provider>
 
-        <Route path="*">
-          <NotFound/>
-        </Route>
-
+        <Route component={NotFound}/>
 
       </Switch>
 
+      <ErrorPopUp isOpen={isErrorPopUpOpen}/>
 
     </div>
   );
