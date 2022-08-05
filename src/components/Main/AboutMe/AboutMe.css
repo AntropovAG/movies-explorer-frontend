@@ -41,7 +41,7 @@
   max-width: 600px;
 }
 
-.student-profile__info_name {
+.student-profile__name {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
@@ -53,7 +53,7 @@
   padding: 0 0 18px 0;
 }
 
-.student-profile__info_occupation {
+.student-profile__occupation {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
@@ -64,7 +64,7 @@
   padding: 0 0 26px 0;
 }
 
-.student-profile__info_description {
+.student-profile__description {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
@@ -75,11 +75,11 @@
   padding: 0 0 99px 0;
 }
 
-.student-profile__info_links {
+.student-profile__links {
   display: flex;
 }
 
-.student-profile__info_link {
+.student-profile__link {
   text-decoration: none;
   font-family: 'Inter';
   font-style: normal;
@@ -91,11 +91,11 @@
   padding: 0;
 }
 
-.student-profile__info_link:first-child {
+.student-profile__link:first-child {
   margin-right: 20px;
 }
 
-.student-profile__info_link:hover {
+.student-profile__link:hover {
   opacity: .7;
   transition: opacity .3s;
 }
@@ -121,17 +121,17 @@
     padding-bottom: 90px;
   }
 
-  .student-profile__info_name {
+  .student-profile__name {
     font-size: 40px;
     line-height: 40px;
   }
 
-  .student-profile__info_occupation {
+  .student-profile__occupation {
     font-size: 12px;
     line-height: 18px;
   }
 
-  .student-profile__info_description {
+  .student-profile__description {
     font-size: 12px;
     line-height: 18px;
   }
@@ -158,15 +158,15 @@
     max-width: 364px;
   }
 
-  .student-profile__info_name {
+  .student-profile__name {
     padding-bottom: 15px;
   }
 
-  .student-profile__info_occupation {
+  .student-profile__occupation {
     padding-bottom: 20px;
   }
 
-  .student-profile__info_description {
+  .student-profile__description {
     padding-bottom: 87px;
   }
 
@@ -203,17 +203,17 @@
     margin-bottom: 40px;
   }
 
-  .student-profile__info_name {
+  .student-profile__name {
     font-size: 30px;
     line-height: 36px;
   }
 
-  .student-profile__info_occupation {
+  .student-profile__occupation {
     font-size: 11px;
     line-height: 16px;
   }
 
-  .student-profile__info_description {
+  .student-profile__description {
     font-size: 11px;
     line-height: 16px;
   }
@@ -238,15 +238,15 @@
     padding-bottom: 70px;
   }
 
-  .student-profile__info_name {
+  .student-profile__name {
     padding-bottom: 20px;
   }
 
-  .student-profile__info_description {
+  .student-profile__description {
     padding-bottom: 40px;
   }
 
-  .student-profile__info_link:first-child {
+  .student-profile__link:first-child {
     margin-right: 26px;
 }
 }

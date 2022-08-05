@@ -24,13 +24,13 @@
   transition: opacity .3s;
 }
 
-.header__navigation {
+.header-navigation {
   display: flex;
   align-self: center;
   padding: 21px 0;
 }
 
-.header__navigation_movie-links {
+.header-navigation_movie-links {
 width: 100%;
 justify-content: space-between;
 align-items: center;

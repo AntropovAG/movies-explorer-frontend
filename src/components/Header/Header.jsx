@@ -11,7 +11,7 @@ function Header() {
 
       {location.pathname === "/" &&
 
-          <nav className="header__navigation">
+          <nav className="header-navigation">
             <Link className="header__link " to="/signup">Регистрация</Link>
             <Link className="header__link" to="/signin"><button className="header__button" type='button'>Войти</button></Link>
           </nav>
@@ -21,7 +21,7 @@ function Header() {
       {(location.pathname === "/movies" ||
       location.pathname === "/saved-movies" ||
       location.pathname === "/profile") &&
-          <nav className="header__navigation header__navigation_movie-links">
+          <nav className="header-navigation header-navigation_movie-links">
             <div>
               <NavLink className="header__link header__link_movie-link" to="/movies" activeClassName="header__link_movie-link_active">Фильмы</NavLink>
               <NavLink className="header__link header__link_movie-link" to="/saved-movies" activeClassName="header__link_movie-link_active">Сохранённые фильмы</NavLink>

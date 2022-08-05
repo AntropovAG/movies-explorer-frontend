@@ -41,7 +41,7 @@
   padding: 18px 0 20px 0;
 }
 
-.footer__links_container {
+.footer__links-container {
   display: flex;
 }
 
@@ -112,7 +112,7 @@
     padding-top: 0;
   }
 
-  .footer__links_container {
+  .footer__links-container {
     flex-direction: column;
     align-items: center;
     padding-bottom: 30px;

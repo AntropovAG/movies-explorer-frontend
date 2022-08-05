@@ -38,11 +38,11 @@
   padding: 0 0 110px 0;
 }
 
-.project-info__list_item {
+.project-info__list-item {
   max-width: 550px;
 }
 
-.project-info__list_title {
+.project-info__list-title {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
@@ -54,7 +54,7 @@
   margin: 0;
 }
 
-.project-info__list_description {
+.project-info__list-description {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
@@ -65,7 +65,7 @@
   margin: 0;
 }
 
-.project-info__timetable {
+.project-timetable {
   display: flex;
   min-width: 1140px;
   list-style: none;
@@ -73,13 +73,19 @@
   padding: 0 0 110px 0;
 }
 
-.project-info__timetable_backend {
+.project-timetable__backend {
   width: 20%;
   display: flex;
   flex-direction: column;
 }
 
-.project-info__timetable_backend_title {
+.project-timetable__frontend {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-timetable__title {
   padding: 9px 0;
   margin: 0;
   background-color: #3DDC84;
@@ -92,38 +98,17 @@
   color: #000;
 }
 
-.project-info__timetable_backend_description {
-  padding: 14px 0 0 0;
-  margin: 0;
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 17px;
-  text-align: center;
-  color: #8B8B8B;
+.project-timetable__title_color_green {
+  background-color: #3DDC84;
+  color: #000;
 }
 
-.project-info__timetable_frontend {
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-}
-
-.project-info__timetable_frontend_title {
-  padding: 9px 0;
-  margin: 0;
+.project-timetable__title_color_grey {
   background-color: #303030;
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 17px;
-  text-align: center;
   color: #FFF;
 }
 
-.project-info__timetable_frontend_description {
+.project-timetable__description {
   padding: 14px 0 0 0;
   margin: 0;
   font-family: 'Inter';
@@ -150,17 +135,17 @@
     padding: 0 0 93px 0;
   }
 
-  .project-info__list_item {
+  .project-info__list-item {
     max-width: 400px;
   }
 
-  .project-info__list_description {
+  .project-info__list-description {
     font-size: 12px;
     line-height: 18px;
 
   }
 
-  .project-info__timetable {
+  .project-timetable {
     min-width: 1000px;
     padding-bottom:90px;
   }
@@ -185,23 +170,23 @@
     padding: 0 0 93px 0;
   }
 
-  .project-info__list_title {
+  .project-info__list-title {
     padding-bottom: 22px;
   }
 
-  .project-info__list_item {
+  .project-info__list-item {
     max-width: 319px;
   }
 
-  .project-info__timetable {
+  .project-timetable {
     min-width: 668px;
   }
 
-  .project-info__timetable_backend {
+  .project-timetable__backend {
     width: 21%;
   }
 
-  .project-info__timetable_frontend {
+  .project-timetable__frontend {
     width: 79%;
   }
 }
@@ -222,15 +207,15 @@
     align-items: center;
   }
 
-  .project-info__list_item {
+  .project-info__list-item {
     max-width: 500px;
   }
 
-  .project-info__list_item:first-of-type {
+  .project-info__list-item:first-of-type {
     padding-bottom: 56px;
   }
 
-  .project-info__timetable {
+  .project-timetable {
     min-width: 500px;
   }
 
@@ -239,32 +224,22 @@
     line-height: 22px;
   }
 
-  .project-info__list_title {
+  .project-info__list-title {
     font-size: 18px;
     line-height: 22px;
   }
 
-  .project-info__list_description {
+  .project-info__list-description {
     font-size: 11px;
     line-height: 16px;
   }
 
-  .project-info__timetable_backend_title {
+  .project-timetable__title {
     font-size: 11px;
     line-height: 13px;
   }
 
-  .project-info__timetable_backend_description {
-    font-size: 11px;
-    line-height: 13px;
-  }
-
-  .project-info__timetable_frontend_title {
-    font-size: 11px;
-    line-height: 13px;
-  }
-
-  .project-info__timetable_frontend_description {
+  .project-timetable__description {
     font-size: 11px;
     line-height: 13px;
   }
@@ -288,39 +263,31 @@
     padding-bottom: 60px;
   }
 
-  .project-info__list_item {
+  .project-info__list-item {
     max-width: 284px;
   }
 
-  .project-info__list_title {
+  .project-info__list-title {
     padding-bottom: 16px;
   }
 
-  .project-info__timetable {
+  .project-timetable {
     min-width: 284px;
   }
 
-  .project-info__timetable_backend {
+  .project-timetable__backend {
     width: 35%;
   }
 
-  .project-info__timetable_frontend {
+  .project-timetable__frontend {
     width: 65%;
   }
 
-  .project-info__timetable_backend_title {
+  .project-timetable__title {
     padding: 11px 0;
   }
 
-  .project-info__timetable_backend_description {
-    padding-top: 10px;
-  }
-
-  .project-info__timetable_frontend_title {
-    padding: 11px 0
-  }
-
-  .project-info__timetable_frontend_description {
+  .project-timetable__description {
     padding-top: 10px;
   }
 }
