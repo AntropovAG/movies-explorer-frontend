@@ -30,11 +30,18 @@
   padding: 21px 0;
 }
 
-.header-navigation_movie-links {
+.header-navigation_type_movie-links {
 width: 100%;
 justify-content: space-between;
 align-items: center;
 padding-left: 44px;
+}
+
+.header__navigation_type_burger {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .header__link {
@@ -48,16 +55,16 @@ padding-left: 44px;
   align-self: center;
 }
 
-.header__link_movie-link {
+.header__link_type_movie-link {
   font-size: 13px;
   line-height: 18px;
   padding-right: 16px;
 }
-.header__link_movie-link_active {
+.header__link_type_movie-link_active {
   font-weight: 500;
 }
 
-.header__link_account-link {
+.header__link_type_account-link {
   font-size: 14px;
 }
 
@@ -82,11 +89,27 @@ padding-left: 44px;
   cursor: pointer;
 }
 
-.header__button_account-button {
+.header__button_type_account-button {
   width: 100px;
   background-color: #313131;
   border-radius: 20px;
   color: #FFF;
+}
+
+.header__button_type_burger {
+  width: 44px;
+  height: 44px;
+  background-image: url('../../images/icon__COLOR_icon-main.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+.header__button_type_burger:hover {
+  opacity: .7;
+  transition: opacity .3s;
 }
 
 @media screen and (max-width: 1240px) {

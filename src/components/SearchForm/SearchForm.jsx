@@ -1,6 +1,6 @@
 import { React, useState } from 'react'
 import './SearchForm.css'
-import icon from '../../../images/search-form-icon.png'
+import icon from '../../images/search-form-icon.png'
 import FilterCheckbox from '../FilterCheckbox/FilterCheckbox'
 
 function SearchForm({ onSearch }) {

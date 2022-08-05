@@ -1,9 +1,9 @@
 .navigation {
   position: fixed;
-  visibility: visible;
+  visibility: hidden;
   display: flex;
   justify-content: flex-end;
-  opacity: 1;
+  opacity: 0;
   width: 100%;
   height: 100%;
   top: 0;
@@ -12,6 +12,13 @@
   bottom: 0;
   background-color: rgba(0, 0, 0, .5);
   z-index: 1;
+  transition: visibility .3s, opacity .3s linear;
+}
+
+.navigation_opened {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility .3s, opacity .3s linear;
 }
 
 .navigation__container {

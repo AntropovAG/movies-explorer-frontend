@@ -12,6 +12,7 @@ import Login from "../Login/Login";
 import Register from "../Register/Register";
 import Profile from "../Profile/Profile";
 import NotFound from "../NotFound/NotFound";
+import Navigation from "../Navigation/Navigation";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import ErrorPopUp from "../ErrorPopUp/ErrorPopUp";
 // import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
@@ -21,6 +22,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState({name: 'Виктор', email: 'pochta@yandex.ru'});
   const [isErrorPopUpOpen, setIsErrorPopUpOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [isNavigationOpen, setIsNavigationOpen] = useState(false);
 
   function handleUserUpdate (name, email) {
     setCurrentUser(name, email);
@@ -29,6 +31,14 @@ function App() {
   function handleLoading () {
     setIsLoading(true);
     setTimeout(() => setIsLoading(false), 2000)
+  }
+
+  function handleNavigationOpen () {
+    setIsNavigationOpen(true);
+  }
+
+  function handleNavigationClose () {
+    setIsNavigationOpen(false);
   }
 
   // function handleErrorPopUpOpen () {
@@ -40,14 +50,14 @@ function App() {
   // }
 
   return (
+    <CurrentUserContext.Provider value={currentUser}>
     <div className='app'>
       {(location.pathname === "/" ||
       location.pathname === "/movies" ||
       location.pathname === "/saved-movies" ||
-      location.pathname === "/profile") && <Header/>}
+      location.pathname === "/profile") && <Header onClick={handleNavigationOpen}/>}
 
       <Switch>
-        <CurrentUserContext.Provider value={currentUser}>
 
           <Route exact path="/">
             <Main/>
@@ -75,21 +85,20 @@ function App() {
             <Profile onUserUpdate={handleUserUpdate}/>
           </Route>
 
-          {(location.pathname === "/" ||
-            location.pathname === "/movies" ||
-            location.pathname === "/saved-movies") &&
-            <Footer/>
-          }
-
-        </CurrentUserContext.Provider>
-
         <Route component={NotFound}/>
 
       </Switch>
 
+      {(location.pathname === "/" ||
+        location.pathname === "/movies" ||
+        location.pathname === "/saved-movies") && <Footer/>
+      }
+
+      <Navigation onClose={handleNavigationClose} isOpen={isNavigationOpen}/>
       <ErrorPopUp isOpen={isErrorPopUpOpen}/>
 
     </div>
+    </CurrentUserContext.Provider>
   );
 }
 

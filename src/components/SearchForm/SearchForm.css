@@ -51,7 +51,7 @@
 .search-form__button {
   width: 34px;
   height: 34px;
-  background-image: url('../../../images/find-button.png');
+  background-image: url('../../images/find-button.png');
   background-position: center;
   background-repeat: no-repeat;
   background-color: #2F2F2F;
@@ -59,4 +59,46 @@
   cursor: pointer;
   padding: 0;
   margin-left: 56px;
+}
+
+.search-form__button:hover {
+  opacity: .7;
+  transition: opacity .3s;
+}
+
+@media screen and (max-width: 1240px) {
+  .search-form::after {
+    width: 1000px;
+  }
+
+  .search-form__container {
+    width: 1000px;
+  }
+
+  .search-form__input {
+    width: 600px;
+  }
+}
+
+@media screen and (max-width: 1070px) {
+  .search-form {
+    padding-top: 60px;
+  }
+
+  .search-form::after {
+    width: 708px;
+    padding-top: 108px;
+  }
+
+  .search-form__container {
+    width: 708px;
+  }
+
+  .search-form__input {
+    width: 338px;
+  }
+
+  .search-form__button {
+    margin-left: 66px;
+  }
 }

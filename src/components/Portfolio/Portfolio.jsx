@@ -1,6 +1,6 @@
 import React from 'react'
 import './Portfolio.css'
-import linkImage from '../../../images/portfolio-link.png'
+import linkImage from '../../images/portfolio-link.png'
 
 function Portfolio() {
   return (

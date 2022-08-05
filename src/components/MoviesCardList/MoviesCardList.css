@@ -14,7 +14,7 @@
   margin: 0;
   display: grid;
   grid-auto-rows: 1fr;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, min-content);
   gap: 30px 24px;
   justify-content: center;
   list-style: none;
@@ -40,4 +40,22 @@
 .card-list__button:hover {
   opacity: .6;
   transition: .3s;
+}
+
+@media screen and (max-width: 1240px) {
+  .card-list {
+    max-width: 1000px;
+  }
+}
+
+@media screen and (max-width: 1070px) {
+  .card-list {
+    max-width: 768px;
+  }
+
+  .card-list__container {
+    grid-template-columns: repeat(2, min-content);
+    justify-items: center;
+    gap: 36px 30px;
+  }
 }
