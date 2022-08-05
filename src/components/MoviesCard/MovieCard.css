@@ -127,3 +127,35 @@
     width: 311px;
   }
 }
+
+@media screen and (max-width: 750px) {
+  .movie-card {
+    max-width: 500px;
+  }
+
+  .movie-card__image {
+    height: 279px;
+  }
+
+  .movie-card__subscription {
+    width: 430px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .movie-card {
+    max-width: 300px;
+  }
+
+  .movie-card__title {
+    max-width: 210px;
+  }
+
+  .movie-card__image {
+    height: 168px;
+  }
+
+  .movie-card__subscription {
+    width: 272px;
+  }
+}

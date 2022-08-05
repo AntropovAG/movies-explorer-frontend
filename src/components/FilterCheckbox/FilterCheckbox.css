@@ -1,6 +1,10 @@
 .filter-checkbox {
+  height: 72px;
+  width: 100%;
   display: flex;
   align-items: center;
+  background-color: #2F2F2F;
+  border-radius: 0 9px 9px 0;
   padding-left: 30px;
 }
 
@@ -64,6 +68,28 @@
 
   .filter-checkbox::before {
     padding-right: 20px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .filter-checkbox {
+    height: min-content;
+    padding-left: 0;
+    padding-top: 45px;
+    justify-content: center;
+    background-color: inherit;
+  }
+
+  .filter-checkbox::before {
+    padding-right: 0;
+    display: none;
+  }
+
+}
+
+@media screen and (max-width: 550px) {
+  .filter-checkbox__title {
+    font-size: 11px;
   }
 
 }

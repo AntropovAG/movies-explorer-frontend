@@ -19,9 +19,11 @@ function SearchForm({ onSearch }) {
   return (
     <section className="search-form">
       <form className="search-form__container">
-        <img className="search-form__icon" src={icon} alt="Иконка поиска фильма"/>
-        <input className="search-form__input" placeholder='Фильм' value={searchValue || ""} onChange={handleSearchChange} />
-        <button className="search-form__button" type='submit' onClick={handleSearchMovie}></button>
+        <div className="search-form__search-group">
+          <img className="search-form__icon" src={icon} alt="Иконка поиска фильма"/>
+          <input className="search-form__input" placeholder='Фильм' value={searchValue || ""} onChange={handleSearchChange} />
+          <button className="search-form__button" type='submit' onClick={handleSearchMovie}></button>
+        </div>
         <FilterCheckbox/>
       </form>
     </section>
