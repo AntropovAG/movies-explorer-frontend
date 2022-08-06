@@ -88,6 +88,10 @@
 }
 
 @media screen and (max-width: 550px) {
+  .filter-checkbox {
+    padding-top: 36px;
+  }
+
   .filter-checkbox__title {
     font-size: 11px;
   }

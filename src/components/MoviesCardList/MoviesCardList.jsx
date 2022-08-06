@@ -12,11 +12,6 @@ function MoviesCardList() {
         <MovieCard/>
         <MovieCard/>
         <MovieCard/>
-        <MovieCard/>
-        <MovieCard/>
-        <MovieCard/>
-        <MovieCard/>
-        <MovieCard/>
 
       </ul>
       {location.pathname === '/movies' && <button className="card-list__button" type='button'>Ещё</button>}

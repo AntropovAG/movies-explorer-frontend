@@ -56,7 +56,7 @@
   display: flex;
   flex-direction: column;
   padding: 0;
-  margin: 115px 0 90px 0;
+  margin: 113px 0 90px 0;
   align-self: center;
   justify-content: space-between;
 }
@@ -97,6 +97,9 @@
 
 .navigation__account-button {
   width: 100px;
+  height: 32px;
+  font-size: 14px;
+  line-height: 16px;
   background-color: #313131;
   border: none;
   border-radius: 20px;
@@ -108,4 +111,23 @@
 .navigation__account-button:hover {
   opacity: .6;
   transition: .3s;
+}
+
+@media screen and (max-width: 550px) {
+  .navigation__close-button {
+    margin: 20px 18px 0 0;
+  }
+
+  .navigation__list {
+    margin-top: 108px;
+    margin-bottom: 46px;
+  }
+
+  .navigation__link {
+    padding-bottom: 24px;
+  }
+
+  .navigation__link_active {
+    text-underline-offset: 9px;
+  }
 }

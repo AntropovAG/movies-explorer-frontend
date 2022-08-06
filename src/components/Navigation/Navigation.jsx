@@ -15,7 +15,7 @@ function Navigation({ onClose, isOpen }) {
               <NavLink exact to="/saved-movies" className="navigation__link" activeClassName="navigation__link_active">Сохранённые фильмы</NavLink>
             </li>
             <li className="navigation__item">
-            <Link className="navigation__link navigation__link_account-link" to="/profile"><button className="navigation__account-button" type='button'>Аккаунт</button></Link>
+            <Link className="navigation__link" to="/profile"><button className="navigation__account-button" type='button'>Аккаунт</button></Link>
             </li>
         </ul>
       </div>
