@@ -56,6 +56,10 @@
   border-bottom: 1px solid #4285F4;;
 }
 
+.login-form__input_type_error {
+  color: #EE3465;
+}
+
 .login-form__input-error {
   height: 12px;
   font-style: normal;
@@ -78,7 +82,7 @@
   border: none;
   border-radius: 3px;
   margin-top: 202px;
-  padding: 13px 0 15px;
+  padding: 15px 0 15px;
   cursor: pointer;
   box-sizing: border-box;
 }
@@ -114,4 +118,48 @@
 .login-form__link:hover {
   opacity: .6;
   transition: .3s;
+}
+
+
+@media screen and (max-width: 1070px) {
+  .login-form__icon {
+    margin-top: 232px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .login-form {
+    width: 260px;
+  }
+
+  .login-form__icon {
+    margin-top: 56px;
+    align-self: center;
+  }
+
+  .login-form__label {
+    align-self: center;
+    padding-top: 50px;
+  }
+
+  .login-form__input-name {
+    padding-top: 65px;
+  }
+
+  .login-form__subscription {
+    font-size: 12px;
+    line-height: 15px;
+    padding-top: 14px;
+  }
+
+  .login-form__authorize-button {
+    font-size: 12px;
+    line-height: 15px;
+    margin-top: 289px;
+  }
+
+  .login-form__link {
+    font-size: 12px;
+    line-height: 15px;
+  }
 }

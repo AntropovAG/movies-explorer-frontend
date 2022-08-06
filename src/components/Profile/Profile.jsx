@@ -54,7 +54,7 @@ function Profile({ onUserUpdate }) {
       <span className="profile-form__input-error email-input-error"></span>
       {isDisabled ?
       <><button className="profile-form__edit-button" type="submit" onClick={editProfile}>Редактировать</button>
-        <button className="profile-form__signout-button" type="submit" onClick={handleLogOut}>Выйти из аккаунта</button>
+        <button className="profile-form__signout-button" type="button" onClick={handleLogOut}>Выйти из аккаунта</button>
       </> :
       <>
       <span className="profile-form__form-error form-error"></span>

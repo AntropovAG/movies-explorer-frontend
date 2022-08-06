@@ -13,8 +13,8 @@
   line-height: 29px;
   text-align: center;
   color: #FFFFFF;
-  padding: 54px 0 124px;
-  margin: 0 auto;
+  padding: 0 0 124px;
+  margin: 54px auto 0;
 }
 
 .profile-form__fieldset {
@@ -167,4 +167,41 @@
   transition: none;
 }
 
+@media screen and (max-width: 1070px) {
+  .profile-form__label {
+    padding-bottom: 96px;
+    margin-top: 216px;
+  }
 
+  .profile-form__edit-button {
+    margin-top: 180px;
+    padding-bottom: 16px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .profile-form {
+    width: 260px;
+  }
+
+  .profile-form__label {
+    padding-bottom: 80px;
+    margin-top: 57px;
+  }
+
+  .profile-form__edit-button {
+    margin-top: 348px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .profile-form__signout-button {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .profile-form__save-button {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
