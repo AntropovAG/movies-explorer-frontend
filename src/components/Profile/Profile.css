@@ -7,6 +7,7 @@
 }
 
 .profile-form__label {
+  font-family: 'Inter', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
@@ -33,6 +34,7 @@
 }
 
 .profile-form__input-name {
+  font-family: 'Inter', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 11px;
@@ -48,6 +50,7 @@
 
 .profile-form__input {
   width: 80%;
+  font-family: 'Inter', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 11px;
@@ -66,6 +69,7 @@
 
 .profile-form__input-error {
   height: 12px;
+  font-family: 'Inter', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 10px;
@@ -77,6 +81,7 @@
 
 .profile-form__edit-button {
   width: min-content;
+  font-family: 'Inter', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 13px;
@@ -92,12 +97,13 @@
 }
 
 .profile-form__edit-button:hover {
-  opacity: .6;
+  opacity: .8;
   transition: .3s;
 }
 
 .profile-form__signout-button {
   width: max-content;
+  font-family: 'Inter', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 13px;
@@ -113,12 +119,13 @@
 }
 
 .profile-form__signout-button:hover {
-  opacity: .6;
+  opacity: .8;
   transition: .3s;
 }
 
 .profile-form__form-error {
   height: 12px;
+  font-family: 'Inter', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 10px;
@@ -131,6 +138,7 @@
 
 .profile-form__save-button {
   width: 100%;
+  font-family: 'Inter', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -147,7 +155,7 @@
 }
 
 .profile-form__save-button:hover {
-  opacity: .6;
+  opacity: .8;
   transition: .3s;
 }
 

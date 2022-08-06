@@ -14,6 +14,7 @@
 }
 
 .register-form__label {
+  font-family: 'Inter', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
@@ -24,6 +25,7 @@
 }
 
 .register-form__input-name {
+  font-family: 'Inter', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 10px;
@@ -39,6 +41,7 @@
 
 .register-form__input {
   height: 30px;
+  font-family: 'Inter', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -62,6 +65,7 @@
 
 .register-form__input-error {
   height: 12px;
+  font-family: 'Inter', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 10px;
@@ -72,6 +76,7 @@
 }
 
 .register-form__authorize-button {
+  font-family: 'Inter', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -88,11 +93,12 @@
 }
 
 .register-form__authorize-button:hover {
-  opacity: .6;
+  opacity: .8;
   transition: .3s;
 }
 
 .register-form__subscription {
+  font-family: 'Inter', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -105,6 +111,7 @@
 
 .register-form__link {
   text-decoration: none;
+  font-family: 'Inter', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -116,7 +123,7 @@
 }
 
 .register-form__link:hover {
-  opacity: .6;
+  opacity: .8;
   transition: .3s;
 }
 

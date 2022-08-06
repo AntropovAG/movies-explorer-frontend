@@ -20,7 +20,7 @@
 }
 
 .header__logo:hover {
-  opacity: .7;
+  opacity: .8;
   transition: opacity .3s;
 }
 
@@ -45,7 +45,7 @@ padding-left: 44px;
 }
 
 .header__link {
-  font-family: 'Inter';
+  font-family: 'Inter', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -70,13 +70,14 @@ padding-left: 44px;
 }
 
 .header__link:hover {
-  opacity: .7;
+  opacity: .8;
   transition: opacity .3s;
 }
 
 .header__button {
   width: 76px;
   height: 32px;
+  font-family: 'Inter', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -101,7 +102,7 @@ padding-left: 44px;
 .header__button_type_burger {
   width: 44px;
   height: 44px;
-  background-image: url('../../images/icon__COLOR_icon-main.svg');
+  background-image: url('../../images/burger_icon.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-color: inherit;
@@ -111,7 +112,7 @@ padding-left: 44px;
 }
 
 .header__button_type_burger:hover {
-  opacity: .7;
+  opacity: .8;
   transition: opacity .3s;
 }
 

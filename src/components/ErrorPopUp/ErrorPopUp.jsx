@@ -9,7 +9,7 @@ function ErrorPopUp({ isOpen, onClose }) {
       <div className="error-popup__container">
         <form className="error__form" name="error_popup">
           <h2 className="error__label">{error}</h2>
-          <button className="error__ok-button" type="submit" onClick={onClose}>Понятно!</button>
+          <button className="error__ok-button" type="button" onClick={onClose}>Понятно!</button>
         </form>
       </div>
     </section>

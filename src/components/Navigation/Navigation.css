@@ -46,7 +46,7 @@
 }
 
 .navigation__close-button:hover {
-  opacity: .6;
+  opacity: .8;
   transition: .3s;
 }
 
@@ -71,6 +71,7 @@
 
 .navigation__link {
   text-decoration: none;
+  font-family: 'Inter', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -91,7 +92,7 @@
 }
 
 .navigation__link:hover {
-  opacity: .6;
+  opacity: .8;
   transition: .3s;
 }
 
@@ -109,7 +110,7 @@
 }
 
 .navigation__account-button:hover {
-  opacity: .6;
+  opacity: .8;
   transition: .3s;
 }
 

@@ -28,7 +28,7 @@
   margin: 80px auto 80px;
   background-color: inherit;
   box-sizing: border-box;
-  font-family: 'Inter';
+  font-family: 'Inter', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -39,7 +39,7 @@
 }
 
 .card-list__button:hover {
-  opacity: .6;
+  opacity: .8;
   transition: .3s;
 }
 

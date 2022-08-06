@@ -38,7 +38,7 @@
   width: 750px;
   height: 100%;
   background-color: inherit;
-  font-family: 'Inter';
+  font-family: 'Inter', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -67,7 +67,7 @@
 }
 
 .search-form__button:hover {
-  opacity: .7;
+  opacity: .8;
   transition: opacity .3s;
 }
 

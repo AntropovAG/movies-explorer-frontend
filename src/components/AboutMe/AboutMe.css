@@ -7,7 +7,7 @@
 }
 
 .student-profile__header {
-    font-family: 'Inter';
+    font-family: 'Inter', 'Arial', sans-serif;;
     font-style: normal;
     font-weight: 400;
     font-size: 22px;
@@ -42,7 +42,7 @@
 }
 
 .student-profile__name {
-  font-family: 'Inter';
+  font-family: 'Inter', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 50px;
@@ -54,7 +54,7 @@
 }
 
 .student-profile__occupation {
-  font-family: 'Inter';
+  font-family: 'Inter', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -65,7 +65,7 @@
 }
 
 .student-profile__description {
-  font-family: 'Inter';
+  font-family: 'Inter', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -81,7 +81,7 @@
 
 .student-profile__link {
   text-decoration: none;
-  font-family: 'Inter';
+  font-family: 'Inter', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -96,7 +96,7 @@
 }
 
 .student-profile__link:hover {
-  opacity: .7;
+  opacity: .8;
   transition: opacity .3s;
 }
 
@@ -144,7 +144,7 @@
 
   .student-profile__header {
     padding-top: 91px;
-}
+  }
 
   .student-profile__header::after {
     width: 668px;
@@ -248,5 +248,5 @@
 
   .student-profile__link:first-child {
     margin-right: 26px;
-}
+  }
 }

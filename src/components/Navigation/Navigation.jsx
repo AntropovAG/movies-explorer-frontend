@@ -5,7 +5,7 @@ import './Navigation.css'
 
 function Navigation({ onClose, isOpen }) {
   return (
-    <div className={`navigation ${isOpen && 'navigation_opened'}`}>
+    <nav className={`navigation ${isOpen && 'navigation_opened'}`}>
       <div className='navigation__container'>
         <button className="navigation__close-button" type="button" onClick={onClose}></button>
         <ul className="navigation__list">
@@ -15,11 +15,11 @@ function Navigation({ onClose, isOpen }) {
               <NavLink exact to="/saved-movies" className="navigation__link" activeClassName="navigation__link_active">Сохранённые фильмы</NavLink>
             </li>
             <li className="navigation__item">
-            <Link className="navigation__link" to="/profile"><button className="navigation__account-button" type='button'>Аккаунт</button></Link>
+              <Link className="navigation__link" to="/profile"><button className="navigation__account-button" type='button'>Аккаунт</button></Link>
             </li>
         </ul>
       </div>
-    </div>
+    </nav>
   )
 }
 

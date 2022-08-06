@@ -7,7 +7,7 @@
 }
 
 .portfolio__title {
-  font-family: 'Inter';
+  font-family: 'Inter', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -51,12 +51,12 @@
 }
 
 .portfolio__link:hover {
-  opacity: .7;
+  opacity: .8;
   transition: opacity .3s;
 }
 
 .portfolio__link-name {
-  font-family: 'Inter';
+  font-family: 'Inter', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 30px;

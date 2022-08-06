@@ -5,9 +5,9 @@ function NavTab() {
   return (
     <section className="navtab">
       <nav className='navtab__container'>
-        <button className="navtab__button">О проекте</button>
-        <button className="navtab__button">Технологии</button>
-        <button className="navtab__button">Студент</button>
+        <a className="navtab__button" href='#AboutProject'>О проекте</a>
+        <a className="navtab__button" href='#Techs'>Технологии</a>
+        <a className="navtab__button" href='#AboutMe'>Студент</a>
       </nav>
 
     </section>

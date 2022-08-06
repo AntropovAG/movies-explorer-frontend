@@ -26,7 +26,7 @@ function MovieCard() {
         :
           <button className="movie-card__delete-button" type="button" onClick={handleCardLike}></button>}
       </div>
-      <img src={testPic} className="movie-card__image" alt='картинка'/>
+      <img src={testPic} className="movie-card__image" alt='Картинка фильма'/>
     </article>
   )
 }
