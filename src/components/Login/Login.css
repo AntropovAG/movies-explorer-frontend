@@ -56,7 +56,7 @@
 
 .login-form__input:focus {
   outline: none;
-  border-bottom: 1px solid #4285F4;;
+  border-bottom: 1px solid #4285F4;
 }
 
 .login-form__input_type_error {
@@ -106,7 +106,7 @@
   text-align: center;
   color: #8B8B8B;
   margin: 0 auto;
-  padding: 16px 0 0;
+  padding: 16px 0 16px;
 }
 
 .login-form__link {
@@ -157,6 +157,7 @@
     font-size: 12px;
     line-height: 15px;
     padding-top: 14px;
+    padding-bottom: 14px;
   }
 
   .login-form__authorize-button {

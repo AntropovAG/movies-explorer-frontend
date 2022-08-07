@@ -45,7 +45,7 @@
   line-height: 17px;
   text-align: center;
   color: #4285F4;
-  padding: 0;
+  padding: 0 0 17px;
 }
 
 .wrong-page__link:hover {
@@ -85,5 +85,6 @@
     font-size: 12px;
     line-height: 15px;
     margin-top: 284px;
+    padding-bottom: 15px;
   }
 }

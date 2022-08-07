@@ -65,6 +65,7 @@
 
 .profile-form__input:focus {
   outline: none;
+  border-right: 1px solid #4285F4;
 }
 
 .profile-form__input-error {
@@ -115,7 +116,7 @@
   cursor: pointer;
   box-sizing: border-box;
   margin: 0 auto;
-  padding: 0;
+  padding: 0 0 16px;
 }
 
 .profile-form__signout-button:hover {
@@ -148,7 +149,7 @@
   background-color: #4285F4;
   border: none;
   border-radius: 3px;
-  margin: 20px auto 0;
+  margin: 20px auto 20px;
   padding: 13px 0 15px;
   cursor: pointer;
   box-sizing: border-box;
@@ -206,6 +207,7 @@
   .profile-form__signout-button {
     font-size: 12px;
     line-height: 15px;
+    padding-bottom: 15px;
   }
 
   .profile-form__save-button {

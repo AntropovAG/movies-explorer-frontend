@@ -21,7 +21,7 @@ function SearchForm({ onSearch }) {
       <form className="search-form__container">
         <div className="search-form__search-group">
           <img className="search-form__icon" src={icon} alt="Иконка поиска фильма"/>
-          <input className="search-form__input" placeholder='Фильм' value={searchValue || ""} onChange={handleSearchChange} />
+          <input className="search-form__input" placeholder='Фильм' value={searchValue || ""} onChange={handleSearchChange} required/>
           <button className="search-form__button" type='submit' onClick={handleSearchMovie}></button>
         </div>
         <FilterCheckbox/>
