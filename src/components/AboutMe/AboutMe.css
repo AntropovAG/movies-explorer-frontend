@@ -1,0 +1,252 @@
+.student-profile {
+  display: flex;
+  flex-direction: column;
+  max-width: 1280px;
+  margin: 0 auto;
+  background-color: #202020;
+}
+
+.student-profile__header {
+    font-family: 'Inter', 'Arial', sans-serif;;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    color: #fff;
+    text-align: left;
+    letter-spacing: -0.04em;
+    padding: 110px 0 0;
+    margin: 0 auto;
+}
+
+.student-profile__header::after {
+  width: 1140px;
+  content: '';
+  display: block;
+  box-sizing: border-box;
+  border-bottom: 1px solid #DADADA;
+  padding-top: 23px;
+  margin-bottom: 66px;
+}
+
+.student-profile__info-container {
+  display: flex;
+  justify-content: space-between;
+  width: 1140px;
+  margin: 0 auto;
+  padding: 0 0 102px 0;
+}
+
+.student-profile__info {
+  max-width: 600px;
+}
+
+.student-profile__name {
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 58px;
+  letter-spacing: -0.04em;
+  color: #FFF;
+  margin: 0;
+  padding: 0 0 18px 0;
+}
+
+.student-profile__occupation {
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 20px;
+  color: #FFFFFF;
+  margin: 0;
+  padding: 0 0 26px 0;
+}
+
+.student-profile__description {
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #FFFFFF;
+  margin: 0;
+  padding: 0 0 99px 0;
+}
+
+.student-profile__links {
+  display: flex;
+}
+
+.student-profile__link {
+  text-decoration: none;
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #FFFFFF;
+  margin: 0;
+  padding: 0;
+}
+
+.student-profile__link:first-child {
+  margin-right: 20px;
+}
+
+.student-profile__link:hover {
+  opacity: .8;
+  transition: opacity .3s;
+}
+
+.student-profile__photo {
+  min-width: 270px;
+  max-height: 327px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 1240px) {
+  .student-profile {
+    max-width: 1120px;
+  }
+
+  .student-profile__header::after {
+    width: 1000px;
+  }
+
+  .student-profile__info-container {
+    width: 1000px;
+    padding-bottom: 90px;
+  }
+
+  .student-profile__name {
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  .student-profile__occupation {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .student-profile__description {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+@media screen and (max-width: 1070px) {
+  .student-profile {
+    max-width: 768px;
+  }
+
+  .student-profile__header {
+    padding-top: 91px;
+  }
+
+  .student-profile__header::after {
+    width: 668px;
+  }
+
+  .student-profile__info-container {
+    width: 668px;
+  }
+
+  .student-profile__info {
+    max-width: 364px;
+  }
+
+  .student-profile__name {
+    padding-bottom: 15px;
+  }
+
+  .student-profile__occupation {
+    padding-bottom: 20px;
+  }
+
+  .student-profile__description {
+    padding-bottom: 87px;
+  }
+
+  .student-profile__photo {
+    min-width: 255px;
+    max-height: 307px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .student-profile {
+    max-width: 520px;
+  }
+
+  .student-profile__header::after {
+    width: 500px;
+    margin-bottom: 60px;
+  }
+
+  .student-profile__header {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .student-profile__info-container {
+    flex-direction: column-reverse;
+    width: 500px;
+  }
+
+  .student-profile__photo {
+    width: 292px;
+    min-height: 352px;
+    align-self: center;
+    margin-bottom: 40px;
+  }
+
+  .student-profile__name {
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  .student-profile__occupation {
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .student-profile__description {
+    font-size: 11px;
+    line-height: 16px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .student-profile {
+    max-width: 320px;
+  }
+
+  .student-profile__header {
+    padding-top: 51px;
+  }
+
+  .student-profile__header::after {
+    width: 292px;
+    padding-top: 27px;
+  }
+
+  .student-profile__info-container {
+    width: 292px;
+    padding-bottom: 70px;
+  }
+
+  .student-profile__name {
+    padding-bottom: 20px;
+  }
+
+  .student-profile__description {
+    padding-bottom: 40px;
+  }
+
+  .student-profile__link:first-child {
+    margin-right: 26px;
+  }
+}

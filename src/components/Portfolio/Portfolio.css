@@ -1,0 +1,153 @@
+.portfolio {
+  display: flex;
+  flex-direction: column;
+  width: 1140px;
+  margin: 0 auto;
+  padding: 0 0 125px 0;
+}
+
+.portfolio__title {
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 20px;
+  color: #8B8B8B;
+  margin: 0;
+  padding: 0 0 30px 0;
+}
+
+.portfolio__links {
+  display: flex;
+  width: 1140px;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.portfolio__link-item {
+  list-style: none;
+}
+
+.portfolio__link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  padding: 20px 0 0 0;
+}
+
+.portfolio__link-item::after {
+  content: '';
+  display: block;
+  border-bottom: 1px solid #424242;
+  padding-bottom: 19px;
+}
+
+.portfolio__link-item:last-child::after {
+  content: none;
+  display: none;
+  border: none;
+}
+
+.portfolio__link:hover {
+  opacity: .8;
+  transition: opacity .3s;
+}
+
+.portfolio__link-name {
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 50px;
+  letter-spacing: -0.04em;
+  color: #FFFFFF;
+  margin: 0;
+  padding: 0;
+}
+
+.portfolio__link-image {
+  width: 18px;
+  height: 17px;
+  padding-right: 7px;
+}
+
+
+@media screen and (max-width: 1240px) {
+  .portfolio {
+    width: 1000px;
+    margin: 0 auto;
+    padding-bottom: 90px;
+  }
+
+  .portfolio__links {
+    width: 1000px;
+  }
+
+  .portfolio__link-name {
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 1070px) {
+  .portfolio {
+    width: 668px;
+  }
+
+  .portfolio__links {
+    width: 668px;
+  }
+
+  .portfolio__link-image {
+    width: 17px;
+    height: 16px;
+    padding-right: 5px;
+    padding-top: 2px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .portfolio {
+    width: 520px;
+  }
+
+  .portfolio__links {
+    width: 500px;
+  }
+
+  .portfolio__link-name {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .portfolio__link-image {
+    width: 11px;
+    height: 11px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .portfolio {
+    width: 320px;
+    padding-bottom: 70px;
+  }
+
+  .portfolio__title {
+    width: 292px;
+    font-size: 14px;
+    margin: 0 auto;
+    padding-bottom: 21px;
+  }
+
+  .portfolio__links {
+    width: 292px;
+  }
+
+  .portfolio__link-image {
+    width: 10px;
+    height: 10px;
+    padding-bottom: 4px;
+    padding-top: 0;
+  }
+}

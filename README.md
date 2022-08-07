@@ -1,2 +1,4 @@
-# movies-explorer-frontend
-frontend for diploma
+# Дипломный проект Фильмы
+
+Ссылка на макет: https://www.figma.com/file/qRIW4LaASD6DPWvLqHqs8g/Diploma-(Copy)?node-id=891%3A3857
+Ссылка на проект на домене: /в данный момент не доступно в связи с отсутствием оплаты домен (будет обновлено при деплое)/

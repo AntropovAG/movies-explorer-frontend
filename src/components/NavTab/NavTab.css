@@ -1,0 +1,82 @@
+.navtab {
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
+  background-color: #272727;
+  border-radius: 0 0 10px 10px;
+}
+
+.navtab__container {
+  display: flex;
+  align-self: center;
+  padding: 30px 0 30px;
+  margin: 0 auto;
+}
+
+.navtab__button {
+  text-decoration: none;
+  width: 96px;
+  padding: 0;
+  margin: 0 5px;
+  border: none;
+  background-color: #303030;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #fff;
+  padding: 10px 0 10px;
+  text-align: center;
+}
+
+.navtab__button:hover {
+  opacity: .8;
+  transition: opacity .3s;
+}
+
+@media screen and (max-width: 1240px) {
+  .navtab {
+    max-width: 1000px;
+  }
+}
+
+
+@media screen and (max-width: 1070px) {
+  .navtab {
+    max-width: 728px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .navtab {
+    max-width: 520px;
+  }
+
+  .navtab__button {
+    width: 82px;
+    font-size: 10px;
+    padding: 5px 0 5px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .navtab {
+    max-width: 292px;
+  }
+
+  .navtab__container {
+    padding: 0 0 17px;
+  }
+
+  .navtab__button {
+    border-radius: 6px;
+    margin: 0 6px 0 0;
+  }
+
+  .navtab__button:last-of-type {
+    margin-right: 0;
+  }
+}
