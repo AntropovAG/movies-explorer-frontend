@@ -12,7 +12,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "deploy": "scp -r ./build/* antropovag@130.193.40.60:/home/antropovag/movies-explorer-frontend"
   },
   "eslintConfig": {
     "extends": [

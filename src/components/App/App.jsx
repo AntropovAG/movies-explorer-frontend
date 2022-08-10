@@ -1,5 +1,5 @@
-import { Route, Switch, useLocation } from "react-router-dom"
-import { useState } from "react";
+import { Route, Switch, useLocation, useHistory } from "react-router-dom"
+import { useEffect, useState } from "react";
 import './App.css';
 import '../Header/Header'
 import '../Main/Main'
@@ -14,15 +14,20 @@ import Profile from "../Profile/Profile";
 import NotFound from "../NotFound/NotFound";
 import Navigation from "../Navigation/Navigation";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
-import ErrorPopUp from "../ErrorPopUp/ErrorPopUp";
-// import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
+import InfoPopUp from "../InfoPopUp/InfoPopUp";
+import {register, login, checkTokenValidity} from "../../utils/MainApi";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
 function App() {
   const location = useLocation();
-  const [currentUser, setCurrentUser] = useState({name: 'Виктор', email: 'pochta@yandex.ru'});
-  const [isErrorPopUpOpen, setIsErrorPopUpOpen] = useState(false);
+  const history = useHistory();
+  const [currentUser, setCurrentUser] = useState({});
+  const [infoMessage, setInfoMessage] = useState({message: 'Что-то пошло не так', color: 'red'});
+  const [isInfoPopUpOpen, setIsInfoPopUpOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isNavigationOpen, setIsNavigationOpen] = useState(false);
+  const [isRegistered, setIsRegistered] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   function handleUserUpdate (name, email) {
     setCurrentUser(name, email);
@@ -41,13 +46,59 @@ function App() {
     setIsNavigationOpen(false);
   }
 
-  // function handleErrorPopUpOpen () {
-  //   setIsErrorPopUpOpen(true);
-  // }
+  function handleRegistration({name, email, password}) {
+    register({name, email, password})
+      .then(data => {
+        setIsRegistered(true);
+        setInfoMessage({text: 'Вы успешно зарегистрированы! Пожалуйста войдите в ваш аккаунт!', color: 'white'})
+        setIsInfoPopUpOpen(true);
+        history.push("/signin")
+      })
+        .catch(err => {
+          setIsRegistered(false);
+          setInfoMessage({text: err, color: 'red'})
+          setIsInfoPopUpOpen(true);
+        })
+  }
 
-  // function handleErrorPopUpClose () {
-  //   setIsErrorPopUpOpen(false);
-  // }
+  function handleInfoPopUpClose () {
+    setIsInfoPopUpOpen(false);
+    setInfoMessage({message: 'Что-то пошло не так', color: 'red'})
+  }
+
+  function handleLogin({email, password}) {
+    login({email, password})
+      .then(data => {
+        setIsLoggedIn(true);
+        localStorage.setItem("jwt", data.token);
+        history.push("/movies");
+        })
+        .catch(err => {
+          setIsRegistered(false);
+          setInfoMessage({text: err.status, color: 'red'})
+          setIsInfoPopUpOpen(true);
+          console.log(err)
+        })
+  }
+
+  function checkToken() {
+    if (localStorage.getItem("jwt")) {
+      const jwt = localStorage.getItem("jwt");
+      checkTokenValidity(jwt)
+        .then((res) => {
+        if (res) {
+          // setCurrentUser({ name: res.name, email: res.email });
+          setIsLoggedIn(true);
+          history.push("/movies");
+        }
+      })
+        .catch(err =>console.log(err))
+    }
+  }
+
+  useEffect(()=>{
+    checkToken();
+  }, [])
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
@@ -74,11 +125,11 @@ function App() {
           </Route>
 
           <Route exact path="/signup">
-            <Register/>
+            <Register onRegister={handleRegistration}/>
           </Route>
 
           <Route exact path="/signin">
-            <Login/>
+            <Login onLogin={handleLogin}/>
           </Route>
 
           <Route exact path="/profile">
@@ -95,7 +146,7 @@ function App() {
       }
 
       <Navigation onClose={handleNavigationClose} isOpen={isNavigationOpen}/>
-      <ErrorPopUp isOpen={isErrorPopUpOpen}/>
+      <InfoPopUp isOpen={isInfoPopUpOpen} message={infoMessage} onClose={handleInfoPopUpClose}/>
 
     </div>
     </CurrentUserContext.Provider>
