@@ -75,6 +75,19 @@
   padding: 6px 0 0;
 }
 
+.register-form__form-error {
+  height: 13px;
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  color: #EE3465;
+  margin: 99px 0 0;
+  padding: 0;
+  text-align: center;
+}
+
 .register-form__authorize-button {
   font-family: 'Inter', 'Arial', sans-serif;
   font-style: normal;
@@ -86,7 +99,7 @@
   background-color: #4285F4;
   border: none;
   border-radius: 3px;
-  margin-top: 132px;
+  margin-top: 20px;
   padding: 15px 0 15px;
   cursor: pointer;
   box-sizing: border-box;
@@ -95,6 +108,17 @@
 .register-form__authorize-button:hover {
   opacity: .8;
   transition: .3s;
+}
+
+.register-form__authorize-button:disabled {
+  color: #C2C2C2;
+  background-color: #F8F8F8;
+  cursor: default;
+}
+
+.register-form__authorize-button:disabled:hover {
+  opacity: 1;
+  transition: none;
 }
 
 .register-form__subscription {
@@ -163,10 +187,16 @@
     padding-bottom: 14px;
   }
 
+  .register-form__form-error {
+    height: 12px;
+    font-size: 10px;
+    line-height: 12px;
+    margin-top: 189px;
+  }
+
   .register-form__authorize-button {
     font-size: 12px;
     line-height: 15px;
-    margin-top: 221px;
   }
 
   .register-form__link {

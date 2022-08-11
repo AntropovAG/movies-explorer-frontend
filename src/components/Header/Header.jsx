@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, useLocation, NavLink } from 'react-router-dom';
 import './Header.css'
 
-function Header({ onClick }) {
+function Header({ onClick, isLoggedIn }) {
   const location = useLocation();
   const [windowWidth, setWindowWidth] = useState({ width: window.innerWidth });
 
@@ -31,16 +31,14 @@ function Header({ onClick }) {
     <header className="header">
           <Link className="header__logo" to="/"/>
 
-      {location.pathname === "/" &&
+      {((!isLoggedIn) && location.pathname === "/") &&
           <nav className="header-navigation">
             <Link className="header__link " to="/signup">Регистрация</Link>
             <Link className="header__link" to="/signin"><button className="header__button" type='button'>Войти</button></Link>
           </nav>
       }
 
-      {((location.pathname === "/movies" ||
-      location.pathname === "/saved-movies" ||
-      location.pathname === "/profile") && windowWidth.width > 1070) &&
+      {((isLoggedIn) && windowWidth.width > 1070) &&
           <nav className="header-navigation header-navigation_type_movie-links">
             <div>
               <NavLink className="header__link header__link_type_movie-link" to="/movies" activeClassName="header__link_type_movie-link_active">Фильмы</NavLink>
@@ -50,9 +48,7 @@ function Header({ onClick }) {
           </nav>
           }
 
-      {((location.pathname === "/movies" ||
-      location.pathname === "/saved-movies" ||
-      location.pathname === "/profile") && windowWidth.width < 1070) &&
+      {((isLoggedIn) && windowWidth.width < 1070) &&
           <nav className="header__navigation header__navigation_type_burger">
             <button className="header__button header__button_type_burger" type='button' onClick={onClick}></button>
           </nav>

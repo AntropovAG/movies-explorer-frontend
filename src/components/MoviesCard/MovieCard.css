@@ -94,8 +94,13 @@
   transition: .3s;
 }
 
-.movie-card__image {
+.movie-card__link {
   height: 203px;
+  box-sizing: border-box;
+}
+
+.movie-card__image {
+  height: 100%;
   object-fit: cover;
   object-position: center;
 }
@@ -105,7 +110,7 @@
     max-width: 310px;
   }
 
-  .movie-card__image {
+  .movie-card__link {
     height: 190px;
   }
 
@@ -119,7 +124,7 @@
     max-width: 339px;
   }
 
-  .movie-card__image {
+  .movie-card__link {
     height: 190px;
   }
 
@@ -133,7 +138,7 @@
     max-width: 500px;
   }
 
-  .movie-card__image {
+  .movie-card__link {
     height: 279px;
   }
 
@@ -151,7 +156,7 @@
     max-width: 210px;
   }
 
-  .movie-card__image {
+  .movie-card__link {
     height: 168px;
   }
 

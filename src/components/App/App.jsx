@@ -15,23 +15,19 @@ import NotFound from "../NotFound/NotFound";
 import Navigation from "../Navigation/Navigation";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import InfoPopUp from "../InfoPopUp/InfoPopUp";
-import {register, login, checkTokenValidity} from "../../utils/MainApi";
+import { register, login, checkTokenValidity, logout, getUserInfo, updateUserInfo } from "../../utils/MainApi";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
 function App() {
   const location = useLocation();
   const history = useHistory();
   const [currentUser, setCurrentUser] = useState({});
-  const [infoMessage, setInfoMessage] = useState({message: 'Что-то пошло не так', color: 'red'});
+  const [infoMessage, setInfoMessage] = useState({text: '', color: 'red'});
   const [isInfoPopUpOpen, setIsInfoPopUpOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isNavigationOpen, setIsNavigationOpen] = useState(false);
-  const [isRegistered, setIsRegistered] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  function handleUserUpdate (name, email) {
-    setCurrentUser(name, email);
-  }
+  const [isDisabled, setIsDisabled] = useState(true);
 
   function handleLoading () {
     setIsLoading(true);
@@ -46,24 +42,8 @@ function App() {
     setIsNavigationOpen(false);
   }
 
-  function handleRegistration({name, email, password}) {
-    register({name, email, password})
-      .then(data => {
-        setIsRegistered(true);
-        setInfoMessage({text: 'Вы успешно зарегистрированы! Пожалуйста войдите в ваш аккаунт!', color: 'white'})
-        setIsInfoPopUpOpen(true);
-        history.push("/signin")
-      })
-        .catch(err => {
-          setIsRegistered(false);
-          setInfoMessage({text: err, color: 'red'})
-          setIsInfoPopUpOpen(true);
-        })
-  }
-
-  function handleInfoPopUpClose () {
-    setIsInfoPopUpOpen(false);
-    setInfoMessage({message: 'Что-то пошло не так', color: 'red'})
+  function resetErrorMessage() {
+    setInfoMessage({message: ''})
   }
 
   function handleLogin({email, password}) {
@@ -74,11 +54,24 @@ function App() {
         history.push("/movies");
         })
         .catch(err => {
-          setIsRegistered(false);
-          setInfoMessage({text: err.status, color: 'red'})
-          setIsInfoPopUpOpen(true);
-          console.log(err)
+          setIsLoggedIn(false);
+          setInfoMessage({text: err})
         })
+  }
+
+  function handleRegistration({name, email, password}) {
+    register({name, email, password})
+      .then(data => {
+        handleLogin({email, password})
+      })
+        .catch(err => {
+          setInfoMessage({text: err})
+        })
+  }
+
+  function handleInfoPopUpClose () {
+    setIsInfoPopUpOpen(false);
+    setInfoMessage({message: 'Что-то пошло не так', color: 'red'})
   }
 
   function checkToken() {
@@ -87,12 +80,11 @@ function App() {
       checkTokenValidity(jwt)
         .then((res) => {
         if (res) {
-          // setCurrentUser({ name: res.name, email: res.email });
+          setCurrentUser({ _id: res._id, name: res.name, email: res.email });
           setIsLoggedIn(true);
-          history.push("/movies");
         }
       })
-        .catch(err =>console.log(err))
+        .catch(err => setInfoMessage({text: err, color: 'red'}))
     }
   }
 
@@ -100,13 +92,47 @@ function App() {
     checkToken();
   }, [])
 
+  function handleUserSignOut() {
+    logout()
+    .then((res) => {
+      localStorage.removeItem("jwt");
+      setCurrentUser({})
+      setIsLoggedIn(false);
+      history.push("/");
+    })
+    .catch(err =>console.log(err))
+  }
+
+  function handleUserInfoUpdate({name, email}) {
+    updateUserInfo({name, email})
+    .then((res) => {
+      setCurrentUser({ _id: res._id, name: res.name, email: res.email });
+      setIsInfoPopUpOpen(true);
+      setInfoMessage({text: 'Данные пользователя обновлены', color: 'white'})
+      setIsDisabled(true);
+    })
+    .catch(err => {
+      setInfoMessage({text: err})
+    })
+  }
+
+  useEffect(() => {
+    if (isLoggedIn) {
+    getUserInfo()
+      .then((res) => {
+        setCurrentUser({ _id: res._id, name: res.name, email: res.email })
+      })
+        .catch(err => console.log(err))
+      }
+  }, [isLoggedIn]);
+
   return (
     <CurrentUserContext.Provider value={currentUser}>
     <div className='app'>
       {(location.pathname === "/" ||
       location.pathname === "/movies" ||
       location.pathname === "/saved-movies" ||
-      location.pathname === "/profile") && <Header onClick={handleNavigationOpen}/>}
+      location.pathname === "/profile") && <Header onClick={handleNavigationOpen} isLoggedIn={isLoggedIn}/>}
 
       <Switch>
 
@@ -114,27 +140,49 @@ function App() {
             <Main/>
           </Route>
 
-          <Route exact path="/movies">
+          {/* <Route exact path="/movies">
             <Movies isLoading={isLoading} onSearch={handleLoading}/>
-          </Route>
-        {/* <ProtectedRoute exact path="/movies">
+          </Route> */}
+        <ProtectedRoute
+        exact path="/movies"
+        component={Movies}
+        loggedIn={isLoggedIn}
+        isLoading={isLoading}
+        onSearch={handleLoading}/>
 
-        </ProtectedRoute> */}
+        <ProtectedRoute
+        exact path="/saved-movies"
+        component={SavedMovies}
+        loggedIn={isLoggedIn}
+        isLoading={isLoading}
+        onSearch={handleLoading}/>
+{/*
           <Route exact path="/saved-movies">
             <SavedMovies/>
-          </Route>
+          </Route> */}
 
           <Route exact path="/signup">
-            <Register onRegister={handleRegistration}/>
+            <Register onRegister={handleRegistration} message={infoMessage.text} onMessageReset={resetErrorMessage}/>
           </Route>
 
           <Route exact path="/signin">
-            <Login onLogin={handleLogin}/>
+            <Login onLogin={handleLogin} message={infoMessage.text} onMessageReset={resetErrorMessage}/>
           </Route>
 
+          <ProtectedRoute
+          exact path="/profile"
+          component={Profile}
+          loggedIn={isLoggedIn}
+          onUserUpdate={handleUserInfoUpdate}
+          onSignOut={handleUserSignOut}
+          message={infoMessage.text}
+          onMessageReset={resetErrorMessage}
+          isDisabled={isDisabled}
+          onDisableChange={setIsDisabled}/>
+{/*
           <Route exact path="/profile">
-            <Profile onUserUpdate={handleUserUpdate}/>
-          </Route>
+            <Profile onUserUpdate={handleUserUpdate} onSignOut={handleUserSignOut}/>
+          </Route> */}
 
         <Route component={NotFound}/>
 
