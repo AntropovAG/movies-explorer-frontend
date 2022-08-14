@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import SearchForm from '../SearchForm/SearchForm';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import './SavedMovies.css'
 
-function SavedMovies() {
+function SavedMovies({ onSearch, isLoading, savedMovies, onMount, onDeleteClick }) {
+
+
+  useEffect(() => {
+    onMount()
+  }, [])
+
   return (
     <section className="saved-movies">
       <SearchForm/>
-      <MoviesCardList/>
+      <MoviesCardList extramovies={savedMovies} onDeleteClick={onDeleteClick}/>
     </section>
   )
 };

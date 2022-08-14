@@ -96,11 +96,13 @@
 
 .movie-card__link {
   height: 203px;
+  width: 364px;
   box-sizing: border-box;
 }
 
 .movie-card__image {
   height: 100%;
+  width: 100%;
   object-fit: cover;
   object-position: center;
 }
@@ -112,6 +114,7 @@
 
   .movie-card__link {
     height: 190px;
+    width: 310px;
   }
 
   .movie-card__subscription {
@@ -126,6 +129,7 @@
 
   .movie-card__link {
     height: 190px;
+    width: 339px;
   }
 
   .movie-card__subscription {
@@ -140,6 +144,7 @@
 
   .movie-card__link {
     height: 279px;
+    width: 500px;
   }
 
   .movie-card__subscription {
@@ -158,6 +163,7 @@
 
   .movie-card__link {
     height: 168px;
+    width: 300px;
   }
 
   .movie-card__subscription {

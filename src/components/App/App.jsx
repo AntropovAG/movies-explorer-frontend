@@ -15,7 +15,8 @@ import NotFound from "../NotFound/NotFound";
 import Navigation from "../Navigation/Navigation";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import InfoPopUp from "../InfoPopUp/InfoPopUp";
-import { register, login, checkTokenValidity, logout, getUserInfo, updateUserInfo } from "../../utils/MainApi";
+import { register, login, checkTokenValidity, logout, getUserInfo, updateUserInfo, saveMovie, deleteMovie, getSavedMovies } from "../../utils/MainApi";
+import { getMovies } from "../../utils/MovieApi";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
 function App() {
@@ -28,10 +29,10 @@ function App() {
   const [isNavigationOpen, setIsNavigationOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isDisabled, setIsDisabled] = useState(true);
+  const [savedMovies, setSavedMovies] = useState([]);
 
   function handleLoading () {
     setIsLoading(true);
-    setTimeout(() => setIsLoading(false), 2000)
   }
 
   function handleNavigationOpen () {
@@ -55,7 +56,9 @@ function App() {
         })
         .catch(err => {
           setIsLoggedIn(false);
-          setInfoMessage({text: err})
+          if (typeof err === 'string') {
+            setInfoMessage({text: err})
+          } setInfoMessage({text: 'Непредвиденная ошибка'})
         })
   }
 
@@ -64,14 +67,17 @@ function App() {
       .then(data => {
         handleLogin({email, password})
       })
-        .catch(err => {
+      .catch(err => {
+        setIsLoggedIn(false);
+        if (typeof err === 'string') {
           setInfoMessage({text: err})
-        })
-  }
+        } setInfoMessage({text: 'Непредвиденная ошибка'})
+      })
+}
 
   function handleInfoPopUpClose () {
     setIsInfoPopUpOpen(false);
-    setInfoMessage({message: 'Что-то пошло не так', color: 'red'})
+    setInfoMessage({text: '', color: 'red'})
   }
 
   function checkToken() {
@@ -84,7 +90,7 @@ function App() {
           setIsLoggedIn(true);
         }
       })
-        .catch(err => setInfoMessage({text: err, color: 'red'}))
+        .catch(err => console.log(err))
     }
   }
 
@@ -112,8 +118,61 @@ function App() {
       setIsDisabled(true);
     })
     .catch(err => {
-      setInfoMessage({text: err})
+      if (typeof err === 'string') {
+        setInfoMessage({text: err})
+      } setInfoMessage({text: 'Непредвиденная ошибка'})
     })
+}
+
+  function handleLikeClick({country,
+                            director,
+                            duration,
+                            year,
+                            description,
+                            image,
+                            trailerLink,
+                            nameRU,
+                            nameEN,
+                            thumbnail,
+                            movieId}) {
+    saveMovie({country,
+              director,
+              duration,
+              year,
+              description,
+              image,
+              trailerLink,
+              nameRU,
+              nameEN,
+              thumbnail,
+              movieId})
+    .then((movie) => {
+      setSavedMovies([movie, ...savedMovies])
+    })
+    .catch(err => {
+      if (typeof err === 'string') {
+        setInfoMessage({text: err})
+      } setInfoMessage({text: 'Непредвиденная ошибка'})
+    })
+  }
+
+  function handleDeleteClick(id) {
+    const currentMovie = savedMovies.find((movie) => movie.movieId === id);
+    console.log(id)
+    deleteMovie(currentMovie._id)
+    .then((res) =>
+    setSavedMovies(savedMovies.filter((movie) => movie.movieId !== id)))
+    .catch(err => {
+      if (typeof err === 'string') {
+        setInfoMessage({text: err})
+      } setInfoMessage({text: 'Непредвиденная ошибка'})
+    })
+  }
+
+
+  function handleSavedMoviesSearch() {
+    getSavedMovies()
+    .then(res => setSavedMovies (res))
   }
 
   useEffect(() => {
@@ -128,6 +187,7 @@ function App() {
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
+
     <div className='app'>
       {(location.pathname === "/" ||
       location.pathname === "/movies" ||
@@ -136,53 +196,54 @@ function App() {
 
       <Switch>
 
-          <Route exact path="/">
-            <Main/>
-          </Route>
+        <Route exact path="/">
+          <Main/>
+        </Route>
 
-          {/* <Route exact path="/movies">
-            <Movies isLoading={isLoading} onSearch={handleLoading}/>
-          </Route> */}
         <ProtectedRoute
         exact path="/movies"
         component={Movies}
         loggedIn={isLoggedIn}
         isLoading={isLoading}
-        onSearch={handleLoading}/>
+        setIsLoading={setIsLoading}
+        onSearch={getMovies}
+        onMessageSet={setInfoMessage}
+        onMessageReset={resetErrorMessage}
+        onPopUpOpen={setIsInfoPopUpOpen}
+        onLikeClick={handleLikeClick}
+        onDeleteClick={handleDeleteClick}
+        savedMovies={savedMovies}
+        onMount={handleSavedMoviesSearch}
+        />
 
         <ProtectedRoute
         exact path="/saved-movies"
         component={SavedMovies}
         loggedIn={isLoggedIn}
         isLoading={isLoading}
-        onSearch={handleLoading}/>
-{/*
-          <Route exact path="/saved-movies">
-            <SavedMovies/>
-          </Route> */}
+        onSearch={getMovies}
+        savedMovies={savedMovies}
+        onMount={handleSavedMoviesSearch}
+        onDeleteClick={handleDeleteClick}/>
 
-          <Route exact path="/signup">
-            <Register onRegister={handleRegistration} message={infoMessage.text} onMessageReset={resetErrorMessage}/>
-          </Route>
+        <Route exact path="/signup">
+          <Register onRegister={handleRegistration} message={infoMessage.text} onMessageReset={resetErrorMessage}/>
+        </Route>
 
-          <Route exact path="/signin">
-            <Login onLogin={handleLogin} message={infoMessage.text} onMessageReset={resetErrorMessage}/>
-          </Route>
+        <Route exact path="/signin">
+          <Login onLogin={handleLogin} message={infoMessage.text} onMessageReset={resetErrorMessage}/>
+        </Route>
 
-          <ProtectedRoute
-          exact path="/profile"
-          component={Profile}
-          loggedIn={isLoggedIn}
-          onUserUpdate={handleUserInfoUpdate}
-          onSignOut={handleUserSignOut}
-          message={infoMessage.text}
-          onMessageReset={resetErrorMessage}
-          isDisabled={isDisabled}
-          onDisableChange={setIsDisabled}/>
-{/*
-          <Route exact path="/profile">
-            <Profile onUserUpdate={handleUserUpdate} onSignOut={handleUserSignOut}/>
-          </Route> */}
+        <ProtectedRoute
+        exact path="/profile"
+        component={Profile}
+        loggedIn={isLoggedIn}
+        onUserUpdate={handleUserInfoUpdate}
+        onSignOut={handleUserSignOut}
+        message={infoMessage.text}
+        onMessageReset={resetErrorMessage}
+        isDisabled={isDisabled}
+        onDisableChange={setIsDisabled}/>
 
         <Route component={NotFound}/>
 
@@ -197,6 +258,7 @@ function App() {
       <InfoPopUp isOpen={isInfoPopUpOpen} message={infoMessage} onClose={handleInfoPopUpClose}/>
 
     </div>
+
     </CurrentUserContext.Provider>
   );
 }

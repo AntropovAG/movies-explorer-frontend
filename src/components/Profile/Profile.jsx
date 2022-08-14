@@ -66,7 +66,7 @@ function Profile({ onUserUpdate, onSignOut, message, onMessageReset, isDisabled,
   }, [])
 
   return (
-    <form className="profile-form" name="profile">
+    <form className="profile-form" name="profile" noValidate>
       <h2 className="profile-form__label">Привет, Виталий!</h2>
       <fieldset className="profile-form__fieldset">
         <p className="profile-form__input-name">Имя</p>

@@ -46,7 +46,7 @@ function Login({ onLogin, message, onMessageReset }) {
   }, []);
 
   return (
-    <form className="login-form" name="login" onSubmit={handleSubmit}>
+    <form className="login-form" name="login" onSubmit={handleSubmit} noValidate>
       <Link className='login-form__icon' to="/"></Link>
       <h2 className="login-form__label">Рады видеть!</h2>
       <p className="login-form__input-name">E-mail</p>

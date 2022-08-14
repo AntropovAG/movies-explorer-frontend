@@ -67,7 +67,7 @@ function Register({ onRegister, message, onMessageReset }) {
   }, []);
 
   return (
-    <form className="register-form" name="register" onSubmit={handleSubmit}>
+    <form className="register-form" name="register" onSubmit={handleSubmit} noValidate>
       <Link className='register-form__icon' to="/"></Link>
       <h2 className="register-form__label">Добро пожаловать!</h2>
       <p className="register-form__input-name">Имя</p>

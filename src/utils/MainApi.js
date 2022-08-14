@@ -64,3 +64,53 @@ export function updateUserInfo(userName, userEmail) {
   })
     .then(checkResponse);
 }
+
+export function saveMovie(country,
+                          director,
+                          duration,
+                          year,
+                          description,
+                          image,
+                          trailerLink,
+                          nameRU,
+                          nameEN,
+                          thumbnail,
+                          movieId) {
+return fetch(`${baseURL}/movies`, {
+method: 'POST',
+headers: { "Content-Type": "application/json" },
+credentials: 'include',
+body: JSON.stringify(country,
+                      director,
+                      duration,
+                      year,
+                      description,
+                      image,
+                      trailerLink,
+                      nameRU,
+                      nameEN,
+                      thumbnail,
+                      movieId)
+})
+.then(checkResponse);
+}
+
+export function deleteMovie(id) {
+  return fetch(`${baseURL}/movies/${id}`, {
+    method: 'DELETE',
+    headers: { "Content-Type": "application/json" },
+    credentials: 'include',
+  })
+    .then(checkResponse);
+}
+
+export function getSavedMovies() {
+  return fetch(`${baseURL}/movies`, {
+    method: 'GET',
+    headers: {
+    "Content-Type": "application/json",
+  },
+  credentials: 'include',
+  })
+    .then(checkResponse);
+}
