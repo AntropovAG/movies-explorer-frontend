@@ -4,11 +4,28 @@ import MoviesCardList from '../MoviesCardList/MoviesCardList'
 import SearchForm from '../SearchForm/SearchForm'
 import Preloader from '../Preloader/Preloader'
 
-function Movies({ isLoading, setIsLoading, onSearch, onMessageSet, onMessageReset, onPopUpOpen, onLikeClick, onDeleteClick, savedMovies, onMount }) {
+function Movies({ isLoading,
+                  setIsLoading,
+                  onSearch,
+                  onMessageSet,
+                  onMessageReset,
+                  onPopUpOpen,
+                  onLikeClick,
+                  onDeleteClick,
+                  savedMovies,
+                  initialMovies,
+                  onMount,
+                  windowWidth,
+                  numberToDisplay,
+                  setNumberToDisplay}) {
+
   const [searchResult, setSearchResult] = useState([]);
   const [shortMovies, setShortMovies] = useState([]);
   const [isChecked, setIsChecked] = useState();
-  console.log(searchResult);
+
+  useEffect(() => {
+    onMount()
+  }, [])
 
   useEffect(()=>{
     if (localStorage.getItem('userSearchState')) {
@@ -23,10 +40,6 @@ function Movies({ isLoading, setIsLoading, onSearch, onMessageSet, onMessageRese
     }
   }, [])
 
-  useEffect(() => {
-    onMount()
-  }, [])
-
   return (
     <section className="movies">
       <SearchForm onSearch={onSearch}
@@ -34,7 +47,7 @@ function Movies({ isLoading, setIsLoading, onSearch, onMessageSet, onMessageRese
                   onMessageSet={onMessageSet}
                   onMessageReset={onMessageReset}
                   onPopUpOpen={onPopUpOpen}
-                  movies={searchResult}
+                  initialMovies={initialMovies}
                   setShortMovies={setShortMovies}
                   setSearchResult={setSearchResult}
                   isChecked={isChecked}
@@ -42,7 +55,10 @@ function Movies({ isLoading, setIsLoading, onSearch, onMessageSet, onMessageRese
       {isLoading ? <Preloader/> : <MoviesCardList movies={isChecked ? shortMovies : searchResult}
                                                   savedMovies={savedMovies}
                                                   onLikeClick={onLikeClick}
-                                                  onDeleteClick={onDeleteClick}/>}
+                                                  onDeleteClick={onDeleteClick}
+                                                  windowWidth={windowWidth}
+                                                  numberToDisplay={numberToDisplay}
+                                                  setNumberToDisplay={setNumberToDisplay}/>}
 
     </section>
   )

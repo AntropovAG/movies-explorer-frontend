@@ -13,13 +13,12 @@ function MovieCard({ id,
                      trailerLink,
                      nameRU,
                      nameEN,
-                     thumbnail,
                      onLikeClick,
                      onDeleteClick,
-
+                     savedMovies,
                     }) {
-  const[isLiked, setIsLiked] = useState(false);
   const location = useLocation();
+  const[isLiked, setIsLiked] = useState(location.pathname === '/movies' ? (savedMovies.find(movie => movie.movieId === id) !== undefined) : false);
   const cardLikeButtonClassName = (`movie-card__like-button ${isLiked && 'movie-card__like-button_active'}`);
   const cardImage = `https://api.nomoreparties.co/${image.url}`;
   function toHoursAndMinutes(overalMinutes) {
@@ -28,7 +27,6 @@ function MovieCard({ id,
     return `${(hours === 0) ? '' : hours + ' ч'} ${minutes}м`;
   }
   const movieLength = toHoursAndMinutes(duration);
-
 
   function handleCardClick () {
     if (isLiked === false){

@@ -30,10 +30,32 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isDisabled, setIsDisabled] = useState(true);
   const [savedMovies, setSavedMovies] = useState([]);
+  const [initialMovies, setInitialMovies] = useState([]);
+  const [savedShortMovies, setSavedShortMovies] = useState([]);
+  const [numberToDisplay, setNumberToDisplay] = useState({initial: 0, additional: 0});
+  const [windowWidth, setWindowWidth] = useState({ width: window.innerWidth });
 
-  function handleLoading () {
-    setIsLoading(true);
+  function timeOut (fn, ms) {
+    let timer
+    return () => {
+      clearTimeout(timer)
+      timer = setTimeout(() => {
+        timer = null
+        fn.apply(this, arguments)
+      }, ms)
+    };
   }
+
+  useEffect(() => {
+    const timeOutHandleResize = timeOut(function handleResize() {
+      setWindowWidth({ width: window.innerWidth });
+}, 100)
+    window.addEventListener('resize', timeOutHandleResize)
+    return () => {
+      window.removeEventListener('resize', timeOutHandleResize);
+    }
+  });
+
 
   function handleNavigationOpen () {
     setIsNavigationOpen(true);
@@ -158,10 +180,12 @@ function App() {
 
   function handleDeleteClick(id) {
     const currentMovie = savedMovies.find((movie) => movie.movieId === id);
-    console.log(id)
     deleteMovie(currentMovie._id)
-    .then((res) =>
-    setSavedMovies(savedMovies.filter((movie) => movie.movieId !== id)))
+    .then((res) => {
+      setSavedMovies(savedMovies.filter((movie) => movie.movieId !== id));
+      setSavedShortMovies(savedShortMovies.filter((movie) => movie.movieId !== id));
+    }
+    )
     .catch(err => {
       if (typeof err === 'string') {
         setInfoMessage({text: err})
@@ -169,10 +193,14 @@ function App() {
     })
   }
 
+  function handleMoviesSearch() {
+    getMovies()
+    .then(res => setInitialMovies(res))
+  }
 
   function handleSavedMoviesSearch() {
     getSavedMovies()
-    .then(res => setSavedMovies (res))
+    .then(res => setSavedMovies(res))
   }
 
   useEffect(() => {
@@ -185,6 +213,19 @@ function App() {
       }
   }, [isLoggedIn]);
 
+
+  useEffect(() => {
+    if (location.pathname === '/movies') {
+      if (windowWidth.width >= 1280) {
+        setNumberToDisplay({initial: 12, additional: 3})
+      } else if (windowWidth.width > 768 &&  windowWidth.width < 1280) {
+        setNumberToDisplay({initial: 8, additional: 2})
+      } else if (windowWidth.width <= 480) {
+        setNumberToDisplay({initial: 5, additional: 3})
+      }
+    }
+  }, [windowWidth])
+
   return (
     <CurrentUserContext.Provider value={currentUser}>
 
@@ -192,7 +233,7 @@ function App() {
       {(location.pathname === "/" ||
       location.pathname === "/movies" ||
       location.pathname === "/saved-movies" ||
-      location.pathname === "/profile") && <Header onClick={handleNavigationOpen} isLoggedIn={isLoggedIn}/>}
+      location.pathname === "/profile") && <Header onClick={handleNavigationOpen} isLoggedIn={isLoggedIn} windowWidth={windowWidth}/>}
 
       <Switch>
 
@@ -206,25 +247,34 @@ function App() {
         loggedIn={isLoggedIn}
         isLoading={isLoading}
         setIsLoading={setIsLoading}
-        onSearch={getMovies}
+        onSearch={handleMoviesSearch}
         onMessageSet={setInfoMessage}
         onMessageReset={resetErrorMessage}
         onPopUpOpen={setIsInfoPopUpOpen}
         onLikeClick={handleLikeClick}
         onDeleteClick={handleDeleteClick}
+        initialMovies={initialMovies}
         savedMovies={savedMovies}
         onMount={handleSavedMoviesSearch}
-        />
+        windowWidth={windowWidth}
+        numberToDisplay={numberToDisplay}
+        setNumberToDisplay={setNumberToDisplay}/>
 
         <ProtectedRoute
         exact path="/saved-movies"
         component={SavedMovies}
         loggedIn={isLoggedIn}
         isLoading={isLoading}
+        setIsLoading={setIsLoading}
         onSearch={getMovies}
         savedMovies={savedMovies}
         onMount={handleSavedMoviesSearch}
-        onDeleteClick={handleDeleteClick}/>
+        onDeleteClick={handleDeleteClick}
+        onMessageSet={setInfoMessage}
+        onPopUpOpen={setIsInfoPopUpOpen}
+        setSavedMovies={setSavedMovies}
+        savedShortMovies={savedShortMovies}
+        setSavedShortMovies={setSavedShortMovies}/>
 
         <Route exact path="/signup">
           <Register onRegister={handleRegistration} message={infoMessage.text} onMessageReset={resetErrorMessage}/>

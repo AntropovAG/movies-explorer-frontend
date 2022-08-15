@@ -2,18 +2,23 @@ import { React, useEffect, useState } from 'react'
 import './SearchForm.css'
 import icon from '../../images/search-form-icon.png'
 import FilterCheckbox from '../FilterCheckbox/FilterCheckbox'
+import { useLocation } from 'react-router-dom';
 
 function SearchForm({ onSearch,
                       setIsLoading,
+                      savedMovies,
                       onMessageSet,
-                      onMessageReset,
                       onPopUpOpen,
                       setSearchResult,
+                      setSavedMovies,
                       isChecked,
                       setIsChecked,
-                      setShortMovies }) {
-  const [searchValue, setSearchValue] = useState("");
+                      setShortMovies,
+                      initialMovies,
+                      onMount }) {
 
+  const location = useLocation();
+  const [searchValue, setSearchValue] = useState("");
 
   function handleSearchChange (evt) {
     setSearchValue(evt.target.value)
@@ -22,7 +27,7 @@ function SearchForm({ onSearch,
   function handleMoviesFilter(movies) {
     const keyword = searchValue.toLocaleLowerCase();
     const searchResult = movies.filter((movie) => movie.nameRU.toLowerCase().includes(keyword));
-    const shortMovies = searchResult.filter((movie) => movie.duration < 40)
+    const shortMovies = searchResult.filter((movie) => movie.duration < 40);
     setShortMovies(shortMovies)
     setSearchResult(searchResult)
     localStorage.setItem('userSearchState', JSON.stringify(searchResult));
@@ -38,18 +43,35 @@ function SearchForm({ onSearch,
       onPopUpOpen(true)
     } else {
       setIsLoading(true);
-      onSearch()
-      .then((allMovies) => {
-        handleMoviesFilter(allMovies)
-      })
-      .then((res) => console.log(res))
-      .catch(err => console.log(err))
-      .finally(() => setIsLoading(false))
-    }
+      handleMoviesFilter(initialMovies)
+      setIsLoading(false)
+      }
     }
 
+  function handleSavedMoviesSearch(evt) {
+    evt.preventDefault();
+    const keyword = searchValue.toLocaleLowerCase();
+    localStorage.setItem('userSearchValue', JSON.stringify(searchValue))
+    if (keyword === "") {
+      onMessageSet({text: 'Нужно ввести ключевое слово', color: 'white'});
+      onPopUpOpen(true)
+    } else {
+        setIsLoading(true);
+        const keyword = searchValue.toLocaleLowerCase();
+        const searchResult = savedMovies.filter((movie) => movie.nameRU.toLowerCase().includes(keyword));
+        const shortMovies = searchResult.filter((movie) => movie.duration < 40)
+        setShortMovies(shortMovies)
+        setSavedMovies(searchResult)
+        setIsLoading(false)
+      }
+  }
+
     useEffect(() => {
-      if (localStorage.getItem('userSearchValue')) {
+      onSearch()
+    }, [])
+
+    useEffect(() => {
+      if (localStorage.getItem('userSearchValue') && location.pathname ==='/movies') {
         const searchValue = JSON.parse(localStorage.getItem('userSearchValue'));
         setSearchValue(searchValue);
       }
@@ -61,7 +83,7 @@ function SearchForm({ onSearch,
         <div className="search-form__search-group">
           <img className="search-form__icon" src={icon} alt="Иконка поиска фильма"/>
           <input className="search-form__input" placeholder='Фильм' value={searchValue || ""} onChange={handleSearchChange} required/>
-          <button className="search-form__button" type='submit' onClick={handleMoviesSearch}></button>
+          <button className="search-form__button" type='submit' onClick={location.pathname === '/movies' ? handleMoviesSearch : handleSavedMoviesSearch}></button>
         </div>
         <FilterCheckbox onChange={setIsChecked} isChecked={isChecked} />
       </form>

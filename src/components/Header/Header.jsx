@@ -1,31 +1,9 @@
-import { useEffect, useState } from 'react'
+import React from 'react'
 import { Link, useLocation, NavLink } from 'react-router-dom';
 import './Header.css'
 
-function Header({ onClick, isLoggedIn }) {
+function Header({ onClick, isLoggedIn, windowWidth }) {
   const location = useLocation();
-  const [windowWidth, setWindowWidth] = useState({ width: window.innerWidth });
-
-  function timeOut (fn, ms) {
-    let timer
-    return () => {
-      clearTimeout(timer)
-      timer = setTimeout(() => {
-        timer = null
-        fn.apply(this, arguments)
-      }, ms)
-    };
-  }
-
-  useEffect(() => {
-    const timeOutHandleResize = timeOut(function handleResize() {
-      setWindowWidth({ width: window.innerWidth });
-}, 100)
-    window.addEventListener('resize', timeOutHandleResize)
-    return () => {
-      window.removeEventListener('resize', timeOutHandleResize);
-    }
-  });
 
   return (
     <header className="header">
