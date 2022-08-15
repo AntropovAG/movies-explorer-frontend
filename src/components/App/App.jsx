@@ -173,8 +173,9 @@ function App() {
       setSavedMovies([movie, ...savedMovies])
     })
     .catch(err => {
+      setIsInfoPopUpOpen(true);
       if (typeof err === 'string') {
-        setInfoMessage({text: err})
+        setInfoMessage({text: err, color: 'red'})
       } else {setInfoMessage({text: 'Непредвиденная ошибка'})}
     })
   }
@@ -195,9 +196,11 @@ function App() {
   }
 
   function handleMoviesSearch() {
+    setIsLoading(true)
     getMovies()
     .then(res => setInitialMovies(res))
     .catch(err => console.log(err))
+    .finally(() => setIsLoading(false))
   }
 
   function handleSavedMoviesSearch() {
