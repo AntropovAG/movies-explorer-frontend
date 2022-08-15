@@ -11,7 +11,7 @@ function FilterCheckbox({ onChange, isChecked }) {
   return (
     <div className="filter-checkbox">
       <label className="filter-checkbox__container">
-        <input className="filter-checkbox__input" type="checkbox" onClick={handleCheckboxChange} checked={isChecked ? true : false}/>
+        <input className="filter-checkbox__input" type="checkbox" onChange={handleCheckboxChange} checked={isChecked ? true : false}/>
         <span className="filter-checkbox__checkmark"></span>
       </label>
       <p className="filter-checkbox__title">Короткометражки</p>

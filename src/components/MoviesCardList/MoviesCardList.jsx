@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom'
 import MovieCard from '../MoviesCard/MovieCard'
 import './MoviesCardList.css'
 
-function MoviesCardList({ movies, onLikeClick, onDeleteClick, savedMovies, windowWidth, numberToDisplay, setNumberToDisplay }) {
+function MoviesCardList({ movies, onLikeClick, onDeleteClick, savedMovies, numberToDisplay }) {
   const location = useLocation();
   const [displayedMovies, setDisplayedMovies] = useState([]);
 

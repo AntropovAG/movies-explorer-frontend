@@ -1,5 +1,4 @@
 import { React, useState, useContext, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 import './Profile.css'
 
@@ -8,15 +7,12 @@ function Profile({ onUserUpdate, onSignOut, message, onMessageReset, isDisabled,
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const currentUser = useContext(CurrentUserContext);
-  const history = useHistory();
   const [isValidName, setIsValidName] = useState(true);
   const [isValidEmail, setIsValidEmail] = useState(true);
   const [nameError, setNameError] = useState('');
   const [emailError, setEmailError] = useState('');
 
-  console.log(isValidName, isValidEmail)
-
-  function handleNameChange(evt) {
+   function handleNameChange(evt) {
     const validName = /^[a-zA-Zа-яА-Я- ]{2,30}$/.test(evt.target.value);
     setIsValidName(validName);
     if (evt.target.value.length < 1) {

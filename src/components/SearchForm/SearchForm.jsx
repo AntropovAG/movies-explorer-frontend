@@ -14,8 +14,7 @@ function SearchForm({ onSearch,
                       isChecked,
                       setIsChecked,
                       setShortMovies,
-                      initialMovies,
-                      onMount }) {
+                      initialMovies}) {
 
   const location = useLocation();
   const [searchValue, setSearchValue] = useState("");
@@ -32,6 +31,9 @@ function SearchForm({ onSearch,
     setSearchResult(searchResult)
     localStorage.setItem('userSearchState', JSON.stringify(searchResult));
     localStorage.setItem('userShortMovies', JSON.stringify(shortMovies))
+            if (searchResult.length === 0) {
+          onMessageSet({text: 'К сожалению, ничего не найдено', color: 'white'});
+          onPopUpOpen(true)}
   }
 
   function handleMoviesSearch(evt) {
@@ -45,13 +47,13 @@ function SearchForm({ onSearch,
       setIsLoading(true);
       handleMoviesFilter(initialMovies)
       setIsLoading(false)
+
       }
     }
 
   function handleSavedMoviesSearch(evt) {
     evt.preventDefault();
     const keyword = searchValue.toLocaleLowerCase();
-    localStorage.setItem('userSearchValue', JSON.stringify(searchValue))
     if (keyword === "") {
       onMessageSet({text: 'Нужно ввести ключевое слово', color: 'white'});
       onPopUpOpen(true)
@@ -63,6 +65,10 @@ function SearchForm({ onSearch,
         setShortMovies(shortMovies)
         setSavedMovies(searchResult)
         setIsLoading(false)
+        if (searchResult.length === 0) {
+          onMessageSet({text: 'К сожалению, ничего не найдено', color: 'white'});
+          onPopUpOpen(true)
+        }
       }
   }
 

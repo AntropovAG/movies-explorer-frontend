@@ -15,9 +15,7 @@ function Movies({ isLoading,
                   savedMovies,
                   initialMovies,
                   onMount,
-                  windowWidth,
-                  numberToDisplay,
-                  setNumberToDisplay}) {
+                  numberToDisplay}) {
 
   const [searchResult, setSearchResult] = useState([]);
   const [shortMovies, setShortMovies] = useState([]);
@@ -56,9 +54,7 @@ function Movies({ isLoading,
                                                   savedMovies={savedMovies}
                                                   onLikeClick={onLikeClick}
                                                   onDeleteClick={onDeleteClick}
-                                                  windowWidth={windowWidth}
-                                                  numberToDisplay={numberToDisplay}
-                                                  setNumberToDisplay={setNumberToDisplay}/>}
+                                                  numberToDisplay={numberToDisplay}/>}
 
     </section>
   )

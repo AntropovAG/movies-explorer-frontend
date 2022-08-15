@@ -56,7 +56,6 @@ function App() {
     }
   });
 
-
   function handleNavigationOpen () {
     setIsNavigationOpen(true);
   }
@@ -66,7 +65,7 @@ function App() {
   }
 
   function resetErrorMessage() {
-    setInfoMessage({message: ''})
+    setInfoMessage({text: ''})
   }
 
   function handleLogin({email, password}) {
@@ -80,7 +79,7 @@ function App() {
           setIsLoggedIn(false);
           if (typeof err === 'string') {
             setInfoMessage({text: err})
-          } setInfoMessage({text: 'Непредвиденная ошибка'})
+          } else {setInfoMessage({text: 'Непредвиденная ошибка'})}
         })
   }
 
@@ -93,9 +92,9 @@ function App() {
         setIsLoggedIn(false);
         if (typeof err === 'string') {
           setInfoMessage({text: err})
-        } setInfoMessage({text: 'Непредвиденная ошибка'})
+        } else {setInfoMessage({text: 'Непредвиденная ошибка'})}
       })
-}
+  }
 
   function handleInfoPopUpClose () {
     setIsInfoPopUpOpen(false);
@@ -110,6 +109,7 @@ function App() {
         if (res) {
           setCurrentUser({ _id: res._id, name: res.name, email: res.email });
           setIsLoggedIn(true);
+          history.push(location.pathname)
         }
       })
         .catch(err => console.log(err))
@@ -123,7 +123,7 @@ function App() {
   function handleUserSignOut() {
     logout()
     .then((res) => {
-      localStorage.removeItem("jwt");
+      localStorage.clear();
       setCurrentUser({})
       setIsLoggedIn(false);
       history.push("/");
@@ -140,9 +140,10 @@ function App() {
       setIsDisabled(true);
     })
     .catch(err => {
+      setIsInfoPopUpOpen(true);
       if (typeof err === 'string') {
         setInfoMessage({text: err})
-      } setInfoMessage({text: 'Непредвиденная ошибка'})
+      } else {setInfoMessage({text: 'Непредвиденная ошибка'})}
     })
 }
 
@@ -174,7 +175,7 @@ function App() {
     .catch(err => {
       if (typeof err === 'string') {
         setInfoMessage({text: err})
-      } setInfoMessage({text: 'Непредвиденная ошибка'})
+      } else {setInfoMessage({text: 'Непредвиденная ошибка'})}
     })
   }
 
@@ -189,18 +190,20 @@ function App() {
     .catch(err => {
       if (typeof err === 'string') {
         setInfoMessage({text: err})
-      } setInfoMessage({text: 'Непредвиденная ошибка'})
+      } else {setInfoMessage({text: 'Непредвиденная ошибка'})}
     })
   }
 
   function handleMoviesSearch() {
     getMovies()
     .then(res => setInitialMovies(res))
+    .catch(err => console.log(err))
   }
 
   function handleSavedMoviesSearch() {
     getSavedMovies()
     .then(res => setSavedMovies(res))
+    .catch(err => console.log(err))
   }
 
   useEffect(() => {
@@ -256,9 +259,7 @@ function App() {
         initialMovies={initialMovies}
         savedMovies={savedMovies}
         onMount={handleSavedMoviesSearch}
-        windowWidth={windowWidth}
-        numberToDisplay={numberToDisplay}
-        setNumberToDisplay={setNumberToDisplay}/>
+        numberToDisplay={numberToDisplay}/>
 
         <ProtectedRoute
         exact path="/saved-movies"
