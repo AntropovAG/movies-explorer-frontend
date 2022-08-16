@@ -7,24 +7,24 @@
 }
 
 .project-info__header {
-    font-family: 'Inter', 'Arial', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 27px;
-    color: #fff;
-    text-align: left;
-    letter-spacing: -0.04em;
-    padding: 110px 0 0;
-    margin: 0 auto;
+  font-family: "Inter", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 27px;
+  color: #fff;
+  text-align: left;
+  letter-spacing: -0.04em;
+  padding: 110px 0 0;
+  margin: 0 auto;
 }
 
 .project-info__header::after {
   width: 1140px;
-  content: '';
+  content: "";
   display: block;
   box-sizing: border-box;
-  border-bottom: 1px solid #DADADA;
+  border-bottom: 1px solid #dadada;
   padding-top: 23px;
   margin-bottom: 70px;
 }
@@ -43,7 +43,7 @@
 }
 
 .project-info__list-title {
-  font-family: 'Inter', 'Arial', sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -55,7 +55,7 @@
 }
 
 .project-info__list-description {
-  font-family: 'Inter', 'Arial', sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -88,8 +88,8 @@
 .project-timetable__title {
   padding: 9px 0;
   margin: 0;
-  background-color: #3DDC84;
-  font-family: 'Inter', 'Arial', sans-serif;
+  background-color: #3ddc84;
+  font-family: "Inter", "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -99,27 +99,26 @@
 }
 
 .project-timetable__title_color_green {
-  background-color: #3DDC84;
+  background-color: #3ddc84;
   color: #000;
 }
 
 .project-timetable__title_color_grey {
   background-color: #303030;
-  color: #FFF;
+  color: #fff;
 }
 
 .project-timetable__description {
   padding: 14px 0 0 0;
   margin: 0;
-  font-family: 'Inter', 'Arial', sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 17px;
   text-align: center;
-  color: #8B8B8B;
+  color: #8b8b8b;
 }
-
 
 @media screen and (max-width: 1240px) {
   .project-info {
@@ -142,14 +141,12 @@
   .project-info__list-description {
     font-size: 12px;
     line-height: 18px;
-
   }
 
   .project-timetable {
     min-width: 1000px;
-    padding-bottom:90px;
+    padding-bottom: 90px;
   }
-
 }
 
 @media screen and (max-width: 1070px) {

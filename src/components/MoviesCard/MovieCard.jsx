@@ -1,36 +1,44 @@
-import React, { useState } from 'react';
-import './MovieCard.css';
-import { useLocation } from 'react-router-dom';
+import React, { useState } from "react";
+import "./MovieCard.css";
+import { useLocation } from "react-router-dom";
 
-function MovieCard({ id,
-                     movieId,
-                     country,
-                     director,
-                     duration,
-                     year,
-                     description,
-                     image,
-                     trailerLink,
-                     nameRU,
-                     nameEN,
-                     onLikeClick,
-                     onDeleteClick,
-                     savedMovies,
-                    }) {
+function MovieCard({
+  id,
+  movieId,
+  country,
+  director,
+  duration,
+  year,
+  description,
+  image,
+  trailerLink,
+  nameRU,
+  nameEN,
+  onLikeClick,
+  onDeleteClick,
+  savedMovies,
+}) {
   const location = useLocation();
-  const[isLiked, setIsLiked] = useState(location.pathname === '/movies' ? (savedMovies.find(movie => movie.movieId === id) !== undefined) : false);
-  const cardLikeButtonClassName = (`movie-card__like-button ${isLiked && 'movie-card__like-button_active'}`);
+  const [isLiked, setIsLiked] = useState(
+    location.pathname === "/movies"
+      ? savedMovies.find((movie) => movie.movieId === id) !== undefined
+      : false
+  );
+  const cardLikeButtonClassName = `movie-card__like-button ${
+    isLiked && "movie-card__like-button_active"
+  }`;
   const cardImage = `https://api.nomoreparties.co/${image.url}`;
   function toHoursAndMinutes(overalMinutes) {
     const hours = Math.floor(overalMinutes / 60);
     const minutes = overalMinutes % 60;
-    return `${(hours === 0) ? '' : hours + ' ч'} ${minutes}м`;
+    return `${hours === 0 ? "" : hours + " ч"} ${minutes}м`;
   }
   const movieLength = toHoursAndMinutes(duration);
 
-  function handleCardClick () {
-    if (isLiked === false){
-      onLikeClick({movieId: id,
+  function handleCardClick() {
+    if (isLiked === false) {
+      onLikeClick({
+        movieId: id,
         country,
         director,
         duration,
@@ -40,14 +48,17 @@ function MovieCard({ id,
         trailerLink,
         nameRU,
         nameEN,
-        thumbnail: `https://api.nomoreparties.co/${image.formats.thumbnail.url}`,});
-        setIsLiked(true)} else {
-          onDeleteClick(id)
-          setIsLiked(false)}
+        thumbnail: `https://api.nomoreparties.co/${image.formats.thumbnail.url}`,
+      });
+      setIsLiked(true);
+    } else {
+      onDeleteClick(id);
+      setIsLiked(false);
+    }
   }
 
-  function handleDeleteClick () {
-    onDeleteClick(movieId)
+  function handleDeleteClick() {
+    onDeleteClick(movieId);
   }
 
   return (
@@ -57,15 +68,29 @@ function MovieCard({ id,
           <h2 className="movie-card__title">{nameRU}</h2>
           <p className="movie-card__duration">{movieLength}</p>
         </div>
-        {location.pathname === '/movies' ?
-          <button className={cardLikeButtonClassName} type="button" onClick={handleCardClick}></button>
-        :
-          <button className="movie-card__delete-button" type="button" onClick={handleDeleteClick}></button>}
-
+        {location.pathname === "/movies" ? (
+          <button
+            className={cardLikeButtonClassName}
+            type="button"
+            onClick={handleCardClick}
+          ></button>
+        ) : (
+          <button
+            className="movie-card__delete-button"
+            type="button"
+            onClick={handleDeleteClick}
+          ></button>
+        )}
       </div>
-      <a className='movie-card__link' href={trailerLink}><img src={image.url ? cardImage : image} className="movie-card__image" alt='Картинка фильма'/></a>
+      <a className="movie-card__link" href={trailerLink}>
+        <img
+          src={image.url ? cardImage : image}
+          className="movie-card__image"
+          alt="Картинка фильма"
+        />
+      </a>
     </article>
-  )
+  );
 }
 
-export default MovieCard
+export default MovieCard;

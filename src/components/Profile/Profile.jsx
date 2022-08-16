@@ -1,18 +1,24 @@
-import { React, useState, useContext, useEffect } from 'react';
-import { CurrentUserContext } from '../../contexts/CurrentUserContext';
-import './Profile.css'
+import { React, useState, useContext, useEffect } from "react";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+import "./Profile.css";
 
-function Profile({ onUserUpdate, onSignOut, message, onMessageReset, isDisabled, onDisableChange }) {
-
+function Profile({
+  onUserUpdate,
+  onSignOut,
+  message,
+  onMessageReset,
+  isDisabled,
+  onDisableChange,
+}) {
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const currentUser = useContext(CurrentUserContext);
   const [isValidName, setIsValidName] = useState(true);
   const [isValidEmail, setIsValidEmail] = useState(true);
-  const [nameError, setNameError] = useState('');
-  const [emailError, setEmailError] = useState('');
+  const [nameError, setNameError] = useState("");
+  const [emailError, setEmailError] = useState("");
 
-   function handleNameChange(evt) {
+  function handleNameChange(evt) {
     const validName = /^[a-zA-Zа-яА-Я- ]{2,30}$/.test(evt.target.value);
     setIsValidName(validName);
     if (evt.target.value.length < 1) {
@@ -28,7 +34,9 @@ function Profile({ onUserUpdate, onSignOut, message, onMessageReset, isDisabled,
   }
 
   function handleEmailChange(evt) {
-    const validEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(evt.target.value);
+    const validEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(
+      evt.target.value
+    );
     setIsValidEmail(validEmail);
     if (evt.target.value.length < 1) {
       setEmailError("Поле не может быть пустым");
@@ -40,51 +48,103 @@ function Profile({ onUserUpdate, onSignOut, message, onMessageReset, isDisabled,
     setEmail(evt.target.value);
   }
 
-  function editProfile (evt) {
+  function editProfile(evt) {
     evt.preventDefault();
     onDisableChange(false);
   }
 
-  function handleSubmit (evt) {
+  function handleSubmit(evt) {
     evt.preventDefault();
-    onUserUpdate({name, email});
+    onUserUpdate({ name, email });
   }
 
-  function handleLogOut (evt) {
+  function handleLogOut(evt) {
     evt.preventDefault();
     onSignOut();
   }
 
-  useEffect (() => {
+  useEffect(() => {
     setName(currentUser.name);
     setEmail(currentUser.email);
     onMessageReset();
-  }, [])
+    onDisableChange(true)
+  }, []);
 
   return (
     <form className="profile-form" name="profile" noValidate>
       <h2 className="profile-form__label">Привет, Виталий!</h2>
       <fieldset className="profile-form__fieldset">
         <p className="profile-form__input-name">Имя</p>
-        <input className="profile-form__input" id="name-input" type="name" name="name" value={name || ""} onChange={handleNameChange} placeholder='Ваше имя' minLength='2' maxLength='30' required disabled={isDisabled}/>
+        <input
+          className="profile-form__input"
+          id="name-input"
+          type="name"
+          name="name"
+          value={name || ""}
+          onChange={handleNameChange}
+          placeholder="Ваше имя"
+          minLength="2"
+          maxLength="30"
+          required
+          disabled={isDisabled}
+        />
       </fieldset>
-      <span className="profile-form__input-error name-input-error">{nameError}</span>
+      <span className="profile-form__input-error name-input-error">
+        {nameError}
+      </span>
       <fieldset className="profile-form__fieldset">
         <p className="profile-form__input-name">E-mail</p>
-        <input className="profile-form__input" id="email-input" type="email" name="email" value={email || ""} onChange={handleEmailChange} placeholder='Ваше мыло' required disabled={isDisabled}/>
+        <input
+          className="profile-form__input"
+          id="email-input"
+          type="email"
+          name="email"
+          value={email || ""}
+          onChange={handleEmailChange}
+          placeholder="Ваше мыло"
+          required
+          disabled={isDisabled}
+        />
       </fieldset>
-      <span className="profile-form__input-error email-input-error">{emailError}</span>
-      {isDisabled ?
-      <><button className="profile-form__edit-button" type="button" onClick={editProfile}>Редактировать</button>
-        <button className="profile-form__signout-button" type="button" onClick={handleLogOut}>Выйти из аккаунта</button>
-      </> :
-      <>
-      <span className="profile-form__form-error form-error">{message}</span>
-      <button className="profile-form__save-button" type="submit" onClick={handleSubmit} disabled={( isValidName===false || isValidEmail===false )}>Сохранить</button>
-      </>}
-
+      <span className="profile-form__input-error email-input-error">
+        {emailError}
+      </span>
+      {isDisabled ? (
+        <>
+          <button
+            className="profile-form__edit-button"
+            type="button"
+            onClick={editProfile}
+          >
+            Редактировать
+          </button>
+          <button
+            className="profile-form__signout-button"
+            type="button"
+            onClick={handleLogOut}
+          >
+            Выйти из аккаунта
+          </button>
+        </>
+      ) : (
+        <>
+          <span className="profile-form__form-error form-error">{message}</span>
+          <button
+            className="profile-form__save-button"
+            type="submit"
+            onClick={handleSubmit}
+            disabled={
+              isValidName === false ||
+              isValidEmail === false ||
+              (name === currentUser.name && email === currentUser.email)
+            }
+          >
+            Сохранить
+          </button>
+        </>
+      )}
     </form>
-  )
+  );
 }
 
-export default Profile
+export default Profile;

@@ -7,12 +7,12 @@
 }
 
 .portfolio__title {
-  font-family: 'Inter', 'Arial', sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 20px;
-  color: #8B8B8B;
+  color: #8b8b8b;
   margin: 0;
   padding: 0 0 30px 0;
 }
@@ -38,7 +38,7 @@
 }
 
 .portfolio__link-item::after {
-  content: '';
+  content: "";
   display: block;
   border-bottom: 1px solid #424242;
   padding-bottom: 19px;
@@ -51,18 +51,18 @@
 }
 
 .portfolio__link:hover {
-  opacity: .8;
-  transition: opacity .3s;
+  opacity: 0.8;
+  transition: opacity 0.3s;
 }
 
 .portfolio__link-name {
-  font-family: 'Inter', 'Arial', sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 30px;
   line-height: 50px;
   letter-spacing: -0.04em;
-  color: #FFFFFF;
+  color: #ffffff;
   margin: 0;
   padding: 0;
 }
@@ -72,7 +72,6 @@
   height: 17px;
   padding-right: 7px;
 }
-
 
 @media screen and (max-width: 1240px) {
   .portfolio {

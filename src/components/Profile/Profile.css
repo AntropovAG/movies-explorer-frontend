@@ -7,13 +7,13 @@
 }
 
 .profile-form__label {
-  font-family: 'Inter', 'Arial', sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
   line-height: 29px;
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff;
   padding: 0 0 124px;
   margin: 54px auto 0;
 }
@@ -25,7 +25,6 @@
   border: none;
   padding: 0;
   margin: 0 auto;
-
 }
 
 .profile-form__fieldset:first-of-type {
@@ -34,7 +33,7 @@
 }
 
 .profile-form__input-name {
-  font-family: 'Inter', 'Arial', sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 11px;
@@ -50,12 +49,12 @@
 
 .profile-form__input {
   width: 80%;
-  font-family: 'Inter', 'Arial', sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 11px;
   line-height: 13px;
-  color: #FFFFFF;
+  color: #ffffff;
   text-align: end;
   background-color: inherit;
   border: none;
@@ -65,30 +64,30 @@
 
 .profile-form__input:focus {
   outline: none;
-  border-right: 1px solid #4285F4;
+  border-right: 1px solid #4285f4;
 }
 
 .profile-form__input-error {
   height: 12px;
-  font-family: 'Inter', 'Arial', sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 10px;
   line-height: 12px;
-  color: #EE3465;
+  color: #ee3465;
   margin: 0;
   padding: 6px 0 0;
 }
 
 .profile-form__edit-button {
   width: min-content;
-  font-family: 'Inter', 'Arial', sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 13px;
   line-height: 16px;
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff;
   background-color: transparent;
   border: none;
   margin: 189px auto 0;
@@ -98,19 +97,19 @@
 }
 
 .profile-form__edit-button:hover {
-  opacity: .8;
-  transition: .3s;
+  opacity: 0.8;
+  transition: 0.3s;
 }
 
 .profile-form__signout-button {
   width: max-content;
-  font-family: 'Inter', 'Arial', sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 13px;
   line-height: 16px;
   text-align: center;
-  color: #EE3465;
+  color: #ee3465;
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -120,18 +119,18 @@
 }
 
 .profile-form__signout-button:hover {
-  opacity: .8;
-  transition: .3s;
+  opacity: 0.8;
+  transition: 0.3s;
 }
 
 .profile-form__form-error {
   height: 12px;
-  font-family: 'Inter', 'Arial', sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 10px;
   line-height: 12px;
-  color: #EE3465;
+  color: #ee3465;
   margin: 189px 0 0;
   padding: 0;
   text-align: center;
@@ -139,14 +138,14 @@
 
 .profile-form__save-button {
   width: 100%;
-  font-family: 'Inter', 'Arial', sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 17px;
   text-align: center;
-  color: #FFFFFF;
-  background-color: #4285F4;
+  color: #ffffff;
+  background-color: #4285f4;
   border: none;
   border-radius: 3px;
   margin: 20px auto 20px;
@@ -156,13 +155,13 @@
 }
 
 .profile-form__save-button:hover {
-  opacity: .8;
-  transition: .3s;
+  opacity: 0.8;
+  transition: 0.3s;
 }
 
 .profile-form__save-button:disabled {
-  color: #C2C2C2;
-  background-color: #F8F8F8;
+  color: #c2c2c2;
+  background-color: #f8f8f8;
   cursor: default;
 }
 

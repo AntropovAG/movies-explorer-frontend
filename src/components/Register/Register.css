@@ -10,43 +10,44 @@
   width: 38px;
   height: 38px;
   margin-top: 70px;
-  background-image: url('../../images/header-logo.png');
+  background-image: url("../../images/header-logo.png");
 }
 
 .register-form__label {
-  font-family: 'Inter', 'Arial', sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
   line-height: 29px;
-  color: #FFFFFF;
+  color: #ffffff;
   padding: 40px 0 14px;
   margin: 0;
 }
 
 .register-form__input-name {
-  font-family: 'Inter', 'Arial', sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 10px;
   line-height: 12px;
-  color: #8B8B8B;
+  color: #8b8b8b;
   padding: 24px 0 5px 0;
   margin: 0;
 }
 
-.register-form__input-name:nth-of-type(2), .register-form__input-name:nth-of-type(3) {
+.register-form__input-name:nth-of-type(2),
+.register-form__input-name:nth-of-type(3) {
   padding-top: 5px;
 }
 
 .register-form__input {
   height: 30px;
-  font-family: 'Inter', 'Arial', sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 17px;
-  color: #FFFFFF;
+  color: #ffffff;
   background-color: inherit;
   border: none;
   border-bottom: 1px solid #424242;
@@ -56,47 +57,47 @@
 
 .register-form__input:focus {
   outline: none;
-  border-bottom: 1px solid #4285F4;;
+  border-bottom: 1px solid #4285f4;
 }
 
 .register-form__input_type_error {
-  color: #EE3465;
+  color: #ee3465;
 }
 
 .register-form__input-error {
   height: 12px;
-  font-family: 'Inter', 'Arial', sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 10px;
   line-height: 12px;
-  color: #EE3465;
+  color: #ee3465;
   margin: 0;
   padding: 6px 0 0;
 }
 
 .register-form__form-error {
   height: 13px;
-  font-family: 'Inter', 'Arial', sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 11px;
   line-height: 13px;
-  color: #EE3465;
+  color: #ee3465;
   margin: 99px 0 0;
   padding: 0;
   text-align: center;
 }
 
 .register-form__authorize-button {
-  font-family: 'Inter', 'Arial', sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 17px;
   text-align: center;
-  color: #FFFFFF;
-  background-color: #4285F4;
+  color: #ffffff;
+  background-color: #4285f4;
   border: none;
   border-radius: 3px;
   margin-top: 20px;
@@ -106,13 +107,13 @@
 }
 
 .register-form__authorize-button:hover {
-  opacity: .8;
-  transition: .3s;
+  opacity: 0.8;
+  transition: 0.3s;
 }
 
 .register-form__authorize-button:disabled {
-  color: #C2C2C2;
-  background-color: #F8F8F8;
+  color: #c2c2c2;
+  background-color: #f8f8f8;
   cursor: default;
 }
 
@@ -122,33 +123,33 @@
 }
 
 .register-form__subscription {
-  font-family: 'Inter', 'Arial', sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
   text-align: center;
-  color: #8B8B8B;
+  color: #8b8b8b;
   margin: 0;
   padding: 16px 0 16px;
 }
 
 .register-form__link {
   text-decoration: none;
-  font-family: 'Inter', 'Arial', sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
   text-align: center;
-  color: #4285F4;
+  color: #4285f4;
   margin: 0;
   padding: 0 0 0 3px;
 }
 
 .register-form__link:hover {
-  opacity: .8;
-  transition: .3s;
+  opacity: 0.8;
+  transition: 0.3s;
 }
 
 @media screen and (max-width: 1070px) {
@@ -176,7 +177,8 @@
     padding-top: 65px;
   }
 
-  .register-form__input-name:nth-of-type(2), .register-form__input-name:nth-of-type(3) {
+  .register-form__input-name:nth-of-type(2),
+  .register-form__input-name:nth-of-type(3) {
     padding-top: 4px;
   }
 

@@ -28,19 +28,19 @@
   margin: 80px auto 80px;
   background-color: inherit;
   box-sizing: border-box;
-  font-family: 'Inter', 'Arial', sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
   line-height: 15px;
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff;
   cursor: pointer;
 }
 
 .card-list__button:hover {
-  opacity: .8;
-  transition: .3s;
+  opacity: 0.8;
+  transition: 0.3s;
 }
 
 @media screen and (max-width: 1240px) {

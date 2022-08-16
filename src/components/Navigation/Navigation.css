@@ -10,15 +10,15 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
-  transition: visibility .3s, opacity .3s linear;
+  transition: visibility 0.3s, opacity 0.3s linear;
 }
 
 .navigation_opened {
   visibility: visible;
   opacity: 1;
-  transition: visibility .3s, opacity .3s linear;
+  transition: visibility 0.3s, opacity 0.3s linear;
 }
 
 .navigation__container {
@@ -33,7 +33,7 @@
 .navigation__close-button {
   width: 22px;
   height: 22px;
-  background-image: url('../../images/navigation-close-button.png');
+  background-image: url("../../images/navigation-close-button.png");
   background-position: center;
   background-repeat: no-repeat;
   background-color: inherit;
@@ -46,8 +46,8 @@
 }
 
 .navigation__close-button:hover {
-  opacity: .8;
-  transition: .3s;
+  opacity: 0.8;
+  transition: 0.3s;
 }
 
 .navigation__list {
@@ -71,7 +71,7 @@
 
 .navigation__link {
   text-decoration: none;
-  font-family: 'Inter', 'Arial', sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -92,8 +92,8 @@
 }
 
 .navigation__link:hover {
-  opacity: .8;
-  transition: .3s;
+  opacity: 0.8;
+  transition: 0.3s;
 }
 
 .navigation__account-button {
@@ -104,14 +104,14 @@
   background-color: #313131;
   border: none;
   border-radius: 20px;
-  color: #FFF;
+  color: #fff;
   box-sizing: border-box;
   cursor: pointer;
 }
 
 .navigation__account-button:hover {
-  opacity: .8;
-  transition: .3s;
+  opacity: 0.8;
+  transition: 0.3s;
 }
 
 @media screen and (max-width: 550px) {
