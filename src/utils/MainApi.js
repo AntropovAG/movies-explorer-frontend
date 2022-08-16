@@ -1,5 +1,5 @@
-// const baseURL = "https://api.movies.antropovag.nomoredomains.xyz";
-const baseURL = "http://localhost:3000";
+const baseURL = "https://api.movies.antropovag.nomoredomains.xyz";
+
 const checkResponse = (res) => {
   if (res.ok) {
     return res.json();
