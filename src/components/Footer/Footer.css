@@ -1,35 +1,35 @@
 .footer {
   width: 1140px;
   margin: 0 auto;
-  padding-top: 79px
+  padding-top: 79px;
 }
 
 .footer__text {
-  font-family: 'Inter', 'Arial', sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 13px;
   line-height: 16px;
   text-align: center;
-  color: #8B8B8B;
+  color: #8b8b8b;
   padding: 0;
   margin: 0;
 }
 
 .footer__text::after {
-  content: '';
+  content: "";
   display: block;
   border-bottom: 1px solid #424242;
   padding-top: 20px;
 }
 
 .footer__year {
-  font-family: 'Inter', 'Arial', sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 13px;
   line-height: 16px;
-  color: #FFFFFF;
+  color: #ffffff;
   padding: 0;
   margin: 0;
 }
@@ -47,13 +47,13 @@
 
 .footer__link {
   text-decoration: none;
-  font-family: 'Inter', 'Arial', sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 13px;
   line-height: 16px;
   text-align: right;
-  color: #FFFFFF;
+  color: #ffffff;
   padding: 0 0 0 20px;
 }
 
@@ -62,8 +62,8 @@
 }
 
 .footer__link:hover {
-  opacity: .8;
-  transition: opacity .3s;
+  opacity: 0.8;
+  transition: opacity 0.3s;
 }
 
 @media screen and (max-width: 1240px) {
@@ -92,7 +92,7 @@
   .footer__year {
     font-size: 12px;
     line-height: 15px;
-    color: #8B8B8B;
+    color: #8b8b8b;
   }
 
   .footer__links {

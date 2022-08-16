@@ -22,12 +22,12 @@
 
 .movie-card__title {
   box-sizing: border-box;
-  font-family: 'Inter', 'Arial', sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 15px;
   line-height: 18px;
-  color: #FFFFFF;
+  color: #ffffff;
   margin: 0;
   max-width: 280px;
   overflow: hidden;
@@ -37,13 +37,13 @@
 }
 
 .movie-card__duration {
-  font-family: 'Inter', 'Arial', sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 11px;
   line-height: 13px;
   display: flex;
-  color: #8B8B8B;
+  color: #8b8b8b;
   margin: 0;
   padding: 9px 0 14px 0;
 }
@@ -51,51 +51,58 @@
 .movie-card__like-button {
   width: 30px;
   height: 30px;
-  background-image: url('../../images/like-button-inactive.png');
+  background-image: url("../../images/like-button-inactive.png");
   background-position: center;
   background-repeat: no-repeat;
   background-color: #222222;
   border: none;
   cursor: pointer;
-  transition: .3s
+  transition: 0.3s;
 }
 
 .movie-card__like-button_active {
   width: 30px;
   height: 30px;
-  background-image: url('../../images/like-button-active.png');
+  background-image: url("../../images/like-button-active.png");
   background-position: center;
   background-repeat: no-repeat;
   background-color: #222222;
   border: none;
   cursor: pointer;
-  transition: .3s
+  transition: 0.3s;
 }
 
 .movie-card__like-button:hover {
   transform: scale(110%);
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .movie-card__delete-button {
   width: 30px;
   height: 30px;
-  background-image: url('../../images/delete-button.png');
+  background-image: url("../../images/delete-button.png");
   background-position: center;
   background-repeat: no-repeat;
   background-color: #222222;
   border: none;
   cursor: pointer;
-  transition: .3s
+  transition: 0.3s;
 }
 
 .movie-card__delete-button:hover {
   transform: scale(110%);
-  transition: .3s;
+  transition: 0.3s;
+}
+
+.movie-card__link {
+  height: 203px;
+  width: 364px;
+  box-sizing: border-box;
 }
 
 .movie-card__image {
-  height: 203px;
+  height: 100%;
+  width: 100%;
   object-fit: cover;
   object-position: center;
 }
@@ -105,8 +112,9 @@
     max-width: 310px;
   }
 
-  .movie-card__image {
+  .movie-card__link {
     height: 190px;
+    width: 310px;
   }
 
   .movie-card__subscription {
@@ -119,8 +127,9 @@
     max-width: 339px;
   }
 
-  .movie-card__image {
+  .movie-card__link {
     height: 190px;
+    width: 339px;
   }
 
   .movie-card__subscription {
@@ -133,8 +142,9 @@
     max-width: 500px;
   }
 
-  .movie-card__image {
+  .movie-card__link {
     height: 279px;
+    width: 500px;
   }
 
   .movie-card__subscription {
@@ -151,8 +161,9 @@
     max-width: 210px;
   }
 
-  .movie-card__image {
+  .movie-card__link {
     height: 168px;
+    width: 300px;
   }
 
   .movie-card__subscription {

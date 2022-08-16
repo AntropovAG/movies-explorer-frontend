@@ -1,4 +1,4 @@
-.error-popup {
+.info-popup {
   position: fixed;
   visibility: hidden;
   display: flex;
@@ -9,18 +9,18 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
-  transition: visibility .3s, opacity .3s linear;
+  transition: visibility 0.3s, opacity 0.3s linear;
 }
 
 .popup_opened {
   visibility: visible;
   opacity: 1;
-  transition: visibility 0s, opacity .3s linear;
+  transition: visibility 0s, opacity 0.3s linear;
 }
 
-.error-popup__container {
+.info-popup__container {
   margin: auto;
   width: 430px;
   z-index: 3;
@@ -32,7 +32,7 @@
   position: relative;
 }
 
-.error__form {
+.info__form {
   width: 358px;
   display: flex;
   flex-direction: column;
@@ -40,26 +40,33 @@
   margin: auto;
 }
 
-.error__label {
-  font-family: 'Inter', 'Arial', sans-serif;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 12px;
-  color: #EE3465;
+.info__label {
+  font-family: "Inter", "Arial", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
   padding: 0 0 25px;
   margin: 0;
   text-align: center;
 }
 
-.error__ok-button {
+.info__label_color_white {
+  color: #fff;
+}
+
+.info__label_color_red {
+  color: #ee3465;
+}
+
+.info__ok-button {
   height: 50px;
-  font-family: 'Inter', 'Arial Narrow Bold', sans-serif;
+  font-family: "Inter", "Arial Narrow Bold", sans-serif;
   font-weight: 500;
   font-size: 14px;
   line-height: 17px;
   text-align: center;
-  color: #FFFFFF;
-  background-color: #4285F4;
+  color: #ffffff;
+  background-color: #4285f4;
   border: none;
   border-radius: 3px;
   margin: 13px 0 37px 0;
@@ -68,29 +75,29 @@
   cursor: pointer;
 }
 
-.form__ok-button:hover {
-  opacity: .8;
-  transition: opacity .3s;
+.info__ok-button:hover {
+  opacity: 0.8;
+  transition: opacity 0.3s;
   cursor: pointer;
 }
 
 @media screen and (max-width: 550px) {
-  .error-popup__container {
+  .info-popup__container {
     width: 292px;
   }
 
-  .error__form {
+  .info__form {
     width: 284px;
     padding: 0;
   }
 
-  .error__label {
+  .info__label {
     font-size: 15px;
     line-height: 12px;
     padding: 20px 0 10px;
   }
 
-  .error__ok-button {
+  .info__ok-button {
     width: 250px;
     height: 40px;
     align-self: center;

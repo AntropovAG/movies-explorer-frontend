@@ -22,7 +22,7 @@
   background-color: #303030;
   border-radius: 10px;
   cursor: pointer;
-  font-family: 'Inter', 'Arial', sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -33,8 +33,8 @@
 }
 
 .navtab__button:hover {
-  opacity: .8;
-  transition: opacity .3s;
+  opacity: 0.8;
+  transition: opacity 0.3s;
 }
 
 @media screen and (max-width: 1240px) {
@@ -42,7 +42,6 @@
     max-width: 1000px;
   }
 }
-
 
 @media screen and (max-width: 1070px) {
   .navtab {

@@ -7,24 +7,24 @@
 }
 
 .student-profile__header {
-    font-family: 'Inter', 'Arial', sans-serif;;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 27px;
-    color: #fff;
-    text-align: left;
-    letter-spacing: -0.04em;
-    padding: 110px 0 0;
-    margin: 0 auto;
+  font-family: "Inter", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 27px;
+  color: #fff;
+  text-align: left;
+  letter-spacing: -0.04em;
+  padding: 110px 0 0;
+  margin: 0 auto;
 }
 
 .student-profile__header::after {
   width: 1140px;
-  content: '';
+  content: "";
   display: block;
   box-sizing: border-box;
-  border-bottom: 1px solid #DADADA;
+  border-bottom: 1px solid #dadada;
   padding-top: 23px;
   margin-bottom: 66px;
 }
@@ -42,35 +42,35 @@
 }
 
 .student-profile__name {
-  font-family: 'Inter', 'Arial', sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 50px;
   line-height: 58px;
   letter-spacing: -0.04em;
-  color: #FFF;
+  color: #fff;
   margin: 0;
   padding: 0 0 18px 0;
 }
 
 .student-profile__occupation {
-  font-family: 'Inter', 'Arial', sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
   line-height: 20px;
-  color: #FFFFFF;
+  color: #ffffff;
   margin: 0;
   padding: 0 0 26px 0;
 }
 
 .student-profile__description {
-  font-family: 'Inter', 'Arial', sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 22px;
-  color: #FFFFFF;
+  color: #ffffff;
   margin: 0;
   padding: 0 0 99px 0;
 }
@@ -81,12 +81,12 @@
 
 .student-profile__link {
   text-decoration: none;
-  font-family: 'Inter', 'Arial', sans-serif;
+  font-family: "Inter", "Arial", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 17px;
-  color: #FFFFFF;
+  color: #ffffff;
   margin: 0;
   padding: 0;
 }
@@ -96,8 +96,8 @@
 }
 
 .student-profile__link:hover {
-  opacity: .8;
-  transition: opacity .3s;
+  opacity: 0.8;
+  transition: opacity 0.3s;
 }
 
 .student-profile__photo {
