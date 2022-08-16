@@ -255,17 +255,21 @@ function App() {
     }
   }, [isLoggedIn]);
 
-  useEffect(() => {
+  function handleDisplaySize() {
     if (location.pathname === "/movies") {
       if (windowWidth.width >= 1280) {
         setNumberToDisplay({ initial: 12, additional: 3 });
       } else if (windowWidth.width > 768 && windowWidth.width < 1280) {
         setNumberToDisplay({ initial: 8, additional: 2 });
-      } else if (windowWidth.width <= 480) {
+      } else if (windowWidth.width <= 768) {
         setNumberToDisplay({ initial: 5, additional: 3 });
       }
     }
-  }, [windowWidth]);
+  }
+
+  useEffect(() => {
+    handleDisplaySize()
+  }, [windowWidth.width]);
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
@@ -303,6 +307,7 @@ function App() {
             savedMovies={savedMovies}
             onMount={handleSavedMoviesSearch}
             numberToDisplay={numberToDisplay}
+            handleDisplaySize={handleDisplaySize}
           />
 
           <ProtectedRoute
