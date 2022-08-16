@@ -47,6 +47,7 @@ function App() {
     additional: 0,
   });
   const [windowWidth, setWindowWidth] = useState({ width: window.innerWidth });
+  const [awaitingServer, setAwaitingServer] = useState(false);
 
   function timeOut(fn, ms) {
     let timer;
@@ -82,6 +83,7 @@ function App() {
   }
 
   function handleLogin({ email, password }) {
+    setAwaitingServer(true);
     login({ email, password })
       .then((data) => {
         setIsLoggedIn(true);
@@ -95,10 +97,12 @@ function App() {
         } else {
           setInfoMessage({ text: "Непредвиденная ошибка" });
         }
-      });
+      })
+      .finally(() => setAwaitingServer(false))
   }
 
   function handleRegistration({ name, email, password }) {
+    setAwaitingServer(true);
     register({ name, email, password })
       .then((data) => {
         handleLogin({ email, password });
@@ -110,7 +114,8 @@ function App() {
         } else {
           setInfoMessage({ text: "Непредвиденная ошибка" });
         }
-      });
+      })
+      .finally(() => setAwaitingServer(false))
   }
 
   function handleInfoPopUpClose() {
@@ -323,6 +328,7 @@ function App() {
               onRegister={handleRegistration}
               message={infoMessage.text}
               onMessageReset={resetErrorMessage}
+              awaitingServer={awaitingServer}
             />
           </Route>
 
@@ -331,6 +337,7 @@ function App() {
               onLogin={handleLogin}
               message={infoMessage.text}
               onMessageReset={resetErrorMessage}
+              awaitingServer={awaitingServer}
             />
           </Route>
 

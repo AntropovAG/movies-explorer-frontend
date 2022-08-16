@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Login.css";
 
-function Login({ onLogin, message, onMessageReset }) {
+function Login({ onLogin, message, onMessageReset, awaitingServer }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isValidEmail, setIsValidEmail] = useState(false);
@@ -86,7 +86,7 @@ function Login({ onLogin, message, onMessageReset }) {
       <button
         className="login-form__authorize-button"
         type="submit"
-        disabled={isValidEmail === false || isValidPassword === false}
+        disabled={isValidEmail === false || isValidPassword === false || awaitingServer === true}
       >
         Войти
       </button>

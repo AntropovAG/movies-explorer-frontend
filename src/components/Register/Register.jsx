@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Register.css";
 
-function Register({ onRegister, message, onMessageReset }) {
+function Register({ onRegister, message, onMessageReset, awaitingServer }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -123,7 +123,8 @@ function Register({ onRegister, message, onMessageReset }) {
         disabled={
           isValidName === false ||
           isValidEmail === false ||
-          isValidPassword === false
+          isValidPassword === false ||
+          awaitingServer === true
         }
       >
         Зарегистрироваться
