@@ -26,7 +26,6 @@ function Movies({
   useEffect(() => {
     onMount();
     handleDisplaySize();
-    console.log('проверка')
   }, []);
 
   useEffect(() => {
