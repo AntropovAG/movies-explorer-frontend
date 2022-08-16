@@ -17,6 +17,7 @@ function Movies({
   initialMovies,
   onMount,
   numberToDisplay,
+  handleDisplaySize
 }) {
   const [searchResult, setSearchResult] = useState([]);
   const [shortMovies, setShortMovies] = useState([]);
@@ -24,6 +25,7 @@ function Movies({
 
   useEffect(() => {
     onMount();
+    handleDisplaySize();
   }, []);
 
   useEffect(() => {

@@ -14,7 +14,7 @@ function MoviesCardList({
   const [displayedMovies, setDisplayedMovies] = useState([]);
 
   useEffect(() => {
-    if (location.pathname === "/movies" && movies.length) {
+    if ((location.pathname === "/movies") && movies.length) {
       const moviesToShow = movies.slice(0, numberToDisplay.initial);
       setDisplayedMovies(moviesToShow);
     } else {
