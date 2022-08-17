@@ -188,15 +188,15 @@ function App() {
     movieId,
   }) {
     saveMovie({
-      country,
+      country: (country ? country : 'неизвестно'),
       director,
       duration,
       year,
       description,
       image,
       trailerLink,
-      nameRU,
-      nameEN,
+      nameRU: (nameRU ? nameRU : nameEN),
+      nameEN: (nameEN ? nameEN : 'неизвестно'),
       thumbnail,
       movieId,
     })
