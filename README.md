@@ -1,14 +1,16 @@
-# Дипломный проект Фильмы
-Настоящий проект создан с использованием React. 
-Реализована регистрация, аутентификация, поиск по массиву фильмов со стороннего ресурса, сохранение понравившихся фильмов, удаление из понравивштхся.
+# Project "Movies"
 
-В проекте использованы:
-- HTML, CSS для вёрстки макета проекта;
-- JS, React (хуки, функциональные компоненты) для создания функциональности проекта;
-- Node.js, express.js для создания бэкенда проекта;
-- использована ВМ от Яндекс для деплоя и развёртывания Проекта на сервере.
-При реализации проекта и его публикации применены API для реализации взаимодействия как со сторонним сервером, так и с собственным бэкендом. При вёрстке использовалась методология БЭМ, ООП. Настроена валидация форм, применены методы для улучшения UX при взаимодействии пользователей с формами и активными элементами в проекте.
+## Purpose of the Project
+Project provides the user with such features as registration and authentication in the application, editing of profile, viewing of other projects and developer info, ability to conduct a search in a film base provided by a third-party source (search by name, filter by short film), ability to save movie cards for later view and search through previously saved movies.
 
-Ссылка на макет Проекта: https://www.figma.com/file/qRIW4LaASD6DPWvLqHqs8g/Diploma-(Copy)?node-id=891%3A3857
+### Techs
+- HTML, CSS for creating a layout of the Project;
+- JS, React (hooks (such as useEffect, useLocation, useState, useHistory), functional components) for creation of the functionality of the Project;
+- Node.js, express.js for creation of the backend of the Project;
+- used Yandex VM for deployment and hosting of the Project on a server.
+Project uses an APIs to communicate with a servers (third-party server and Project backend). Used BEM and OOP methodologies when creating a Project. 
+Project has a customized form validation, improved UX for the user interaction with forms and active elements. Project is built using semantic tags for easier accessibility. 
 
-Ссылка на проект на домене: https://movies.antropovag.nomoredomains.xyz/
+Link to the Project template: https://www.figma.com/file/qRIW4LaASD6DPWvLqHqs8g/Diploma-(Copy)?node-id=891%3A3857
+
+Final result of the Project is available at the following addresss: https://movies.antropovag.nomoredomains.xyz/
